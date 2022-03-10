@@ -1,0 +1,83 @@
+|two_bit_4to1mux
+s[0] => s[0].IN2
+s[1] => s[1].IN2
+u[0] => u[0].IN1
+u[1] => u[1].IN1
+v[0] => v[0].IN1
+v[1] => v[1].IN1
+w[0] => w[0].IN1
+w[1] => w[1].IN1
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+m[0] << one_bit_4to1mux:mux0.m
+m[1] << one_bit_4to1mux:mux1.m
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux0
+s[0] => s[0].IN2
+s[1] => s[1].IN1
+u => u.IN1
+v => v.IN1
+w => w.IN1
+x => x.IN1
+m <= one_bit_2to1mux:mux3.m
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux0|one_bit_2to1mux:mux1
+s => m.IN0
+s => m.IN0
+x => m.IN1
+y => m.IN1
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux0|one_bit_2to1mux:mux2
+s => m.IN0
+s => m.IN0
+x => m.IN1
+y => m.IN1
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux0|one_bit_2to1mux:mux3
+s => m.IN0
+s => m.IN0
+x => m.IN1
+y => m.IN1
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux1
+s[0] => s[0].IN2
+s[1] => s[1].IN1
+u => u.IN1
+v => v.IN1
+w => w.IN1
+x => x.IN1
+m <= one_bit_2to1mux:mux3.m
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux1|one_bit_2to1mux:mux1
+s => m.IN0
+s => m.IN0
+x => m.IN1
+y => m.IN1
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux1|one_bit_2to1mux:mux2
+s => m.IN0
+s => m.IN0
+x => m.IN1
+y => m.IN1
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|two_bit_4to1mux|one_bit_4to1mux:mux1|one_bit_2to1mux:mux3
+s => m.IN0
+s => m.IN0
+x => m.IN1
+y => m.IN1
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+

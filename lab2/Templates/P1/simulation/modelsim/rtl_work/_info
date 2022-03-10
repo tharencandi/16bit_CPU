@@ -1,0 +1,212 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Documents/elec/lab2/Templates/P1/simulation/modelsim
+T_opt
+!s110 1646875869
+VMn99o[6XmZMkGRdDo;Ia:1
+Z2 04 18 4 work one_bit_2to1mux_TB fast 0
+=2-fcaa14931a1c-622954dc-1b6-9e0
+Z3 !s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1646875942
+V^fmV0IYg4a7_ib?oT_SaJ0
+Z6 04 15 4 work one_bit_2to1mux fast 0
+=1-fcaa14931a1c-62295525-38c-2854
+Z7 !s124 OEM10U1 
+Z8 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work +acc
+R4
+n@_opt1
+R5
+R1
+T_opt2
+!s110 1646876148
+VViF5BEea^ZERaP=TZXhMT1
+R6
+=1-fcaa14931a1c-622955f3-2e3-2770
+R7
+R8
+R4
+n@_opt2
+R5
+R1
+T_opt3
+!s110 1646876331
+VU>fmjnMfKGmIF]^Y^`Aio1
+R2
+=1-fcaa14931a1c-622956aa-18-1650
+R3
+R8
+R4
+n@_opt3
+R5
+R1
+T_opt4
+!s110 1646876773
+VX<[[:?[j[]DC_MSD6]^z]0
+R2
+=1-fcaa14931a1c-62295864-14a-2ed8
+R3
+R8
+R4
+n@_opt4
+R5
+R1
+T_opt5
+!s110 1646876999
+V^6@?GXJUYblMgFh6[LMV:3
+R2
+=1-fcaa14931a1c-62295946-63-22c4
+R3
+R8
+R4
+n@_opt5
+R5
+R1
+T_opt6
+!s110 1646877405
+V;]RShlJhOG@Im1M[LX_FV1
+Z9 04 8 4 work part1_TB fast 0
+=1-fcaa14931a1c-62295adc-241-4158
+!s124 OEM10U6 
+R8
+R4
+n@_opt6
+R5
+R1
+T_opt7
+!s110 1646877993
+VaGSRa=DmCIERM7B5FZ5zf2
+R9
+=1-fcaa14931a1c-62295d28-143-42bc
+R3
+R8
+R4
+n@_opt7
+R5
+R1
+T_opt8
+!s110 1646879387
+VkUKozdVV>FPo4A@Wgz3gF1
+R9
+=1-fcaa14931a1c-6229629a-253-3b2c
+R3
+R8
+R4
+n@_opt8
+R5
+vfour_bit_2to1mux
+Z10 !s110 1646879384
+!i10b 1
+!s100 ^8O`hKEf2dGz1V1:b3`V:0
+ImZ^oc9Ke68U5c`dFJY7^Q1
+R1
+w1646877111
+8D:/Documents/elec/lab2/Templates/P1/four_bit_2to1mux.v
+FD:/Documents/elec/lab2/Templates/P1/four_bit_2to1mux.v
+!i122 1
+Z11 L0 1 14
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+Z13 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z14 !s108 1646879383.000000
+!s107 D:/Documents/elec/lab2/Templates/P1/four_bit_2to1mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Documents/elec/lab2/Templates/P1|D:/Documents/elec/lab2/Templates/P1/four_bit_2to1mux.v|
+!i113 0
+Z15 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z16 !s92 -vlog01compat -work work +incdir+D:/Documents/elec/lab2/Templates/P1 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+vfour_bit_2to1muxV2
+R10
+!i10b 1
+!s100 dTo4NeMHNIS7kllCaNP_C0
+I_<1B60jQ]oe<C_?lQ6L@D3
+R1
+w1646877843
+8D:/Documents/elec/lab2/Templates/P1/four_bit_2to1muxV2.v
+FD:/Documents/elec/lab2/Templates/P1/four_bit_2to1muxV2.v
+!i122 3
+R11
+R12
+R13
+r1
+!s85 0
+31
+Z17 !s108 1646879384.000000
+!s107 D:/Documents/elec/lab2/Templates/P1/four_bit_2to1muxV2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Documents/elec/lab2/Templates/P1|D:/Documents/elec/lab2/Templates/P1/four_bit_2to1muxV2.v|
+!i113 0
+R15
+R16
+R4
+nfour_bit_2to1mux@v2
+vone_bit_2to1mux
+!s110 1646879383
+!i10b 1
+!s100 nC:5Ya@nBRRkQR>GKXTQS2
+If]fL5B2TC]bzUQjQhiiHN2
+R1
+w1646876933
+8D:/Documents/elec/lab2/Templates/P1/one_bit_2to1mux.v
+FD:/Documents/elec/lab2/Templates/P1/one_bit_2to1mux.v
+!i122 0
+L0 1 8
+R12
+R13
+r1
+!s85 0
+31
+R14
+!s107 D:/Documents/elec/lab2/Templates/P1/one_bit_2to1mux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Documents/elec/lab2/Templates/P1|D:/Documents/elec/lab2/Templates/P1/one_bit_2to1mux.v|
+!i113 0
+R15
+R16
+R4
+vpart1_TB
+R10
+!i10b 1
+!s100 XRPaD3KfeO<HgZ?S?lM;81
+Ik[SKlM4l?=mB^hfzd5Pb`0
+R1
+w1646877895
+8D:/Documents/elec/lab2/Templates/P1/part1_TB.v
+FD:/Documents/elec/lab2/Templates/P1/part1_TB.v
+!i122 2
+L0 3 35
+R12
+R13
+r1
+!s85 0
+31
+R17
+!s107 D:/Documents/elec/lab2/Templates/P1/part1_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Documents/elec/lab2/Templates/P1|D:/Documents/elec/lab2/Templates/P1/part1_TB.v|
+!i113 0
+R15
+R16
+R4
+npart1_@t@b

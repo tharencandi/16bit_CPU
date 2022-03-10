@@ -1,0 +1,21 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+D:/Documents/elec/lab2/Templates/P1 {D:/Documents/elec/lab2/Templates/P1/one_bit_2to1mux.v}
+vlog -vlog01compat -work work +incdir+D:/Documents/elec/lab2/Templates/P2 {D:/Documents/elec/lab2/Templates/P2/one_bit_4to1mux.v}
+
+vlog -vlog01compat -work work +incdir+D:/Documents/elec/lab2/Templates/P2 {D:/Documents/elec/lab2/Templates/P2/one_bit_4to1mux.v}
+vlog -vlog01compat -work work +incdir+D:/Documents/elec/lab2/Templates/P2 {D:/Documents/elec/lab2/Templates/P2/part2_TB.v}
+vlog -vlog01compat -work work +incdir+D:/Documents/elec/lab2/Templates/P2/../P1 {D:/Documents/elec/lab2/Templates/P2/../P1/one_bit_2to1mux.v}
+vlog -vlog01compat -work work +incdir+D:/Documents/elec/lab2/Templates/P2 {D:/Documents/elec/lab2/Templates/P2/one_bit_4to1muxV2.v}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  part2_TB
+
+add wave *
+view structure
+view signals
+run 1 us
