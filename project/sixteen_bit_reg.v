@@ -1,4 +1,4 @@
-module sixteen_bit_reg(D, clk, rst, Q)
+module sixteen_bit_reg(D, clk, rst, Q);
 
 	input[15:0] D;
 	input clk, rst;

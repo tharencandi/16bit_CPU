@@ -1,4 +1,4 @@
-module next_state(instr, new_instr, state, next_state)
+module next_state(instr, new_instr, state, next_state);
 	
 	input new_instr;
 	input [15:0] instr;
@@ -6,11 +6,11 @@ module next_state(instr, new_instr, state, next_state)
 	output reg [15:0] next_state;
 	
 	
-	wire[6:0] temp;
+	wire[7:0] temp;
 	assign temp = {new_instr, instr[15:13], state};
 	
 	always @(temp) begin
-		case (temp)
+		casez (temp)
 		8'b0zzz0000: begin next_state = 4'b0000; end	//stay in s0
 		8'b1zzz0000: begin next_state = 4'b0001; end // new instruction, go to s1
 		8'bz0000001: begin next_state = 4'b0010; end //start load
