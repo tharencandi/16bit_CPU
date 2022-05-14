@@ -1,0 +1,12 @@
+module control_unit(clk, rst, instr, rin, rout, gin, gout, pcin, pcout, addsub, xorctrl)
+	
+	input clk, rst;
+	input [15:0]instr;
+	output [7:0] rin, rout;
+	output gin, gout, pcin, pcout, addsub, addsub, xorctrl;
+	
+	wire [15:0] curr_state, next_state;
+	
+	//16 bit
+	sixteen_bit_reg state_reg(.D(),.clk,.rst(),.Q());
+	

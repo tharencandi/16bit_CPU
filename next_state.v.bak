@@ -1,0 +1,11 @@
+module next_state(instr, state, next_state)
+
+	input [15:0] instr;
+	input [3:0] state;
+	output reg [15:0] next_state;
+	
+	
+	wire[6:0] temp;
+	assign temp = {instr[15:13], state};
+	
+	
