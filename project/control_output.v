@@ -32,7 +32,7 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 		4'b0010: begin ctrl_out = 1'b1; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
 		
 		//move (rx_in and ry_out)
-		4'b0011: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b1; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b0011: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
 		
 		//ldpc (pc_out and rx_in)
 		4'b0100: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b1; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
@@ -58,10 +58,10 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 		4'b1001: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b1; xorctrl = 1'b0; end
 		
 		//add 1 (ry_out, g_in)
-		4'b0111: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b1010: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
 		
 		//add 2 (g_out, rx_in)
-		4'b1000: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end 
+		4'b1011: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end 
 		
 		
 		//XOR
