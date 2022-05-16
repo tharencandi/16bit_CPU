@@ -1,0 +1,39 @@
+`timescale 1ns / 1ps
+ 
+module xor_TB;
+ 
+	// ------------------ Instantiate module ------------------
+	// We are instantiating the module mux2, naming it instantiate_mux2.
+	// select, input1, input2 are controlled by the testbench, output is 
+	// checked  within the testbench
+ 
+	reg [3:0] count;
+	reg [15:0] a,b;
+	
+	wire [15:0] out;
+
+	
+	sixteen_bit_xor xor_inst(.a(a),.b(b),.out(out));
+ 	
+	initial begin 
+		count = 4'b0;
+		
+	end
+	
+	always begin
+		
+		#50
+		count=count+4'b0001;
+	end
+	
+	always @(count) begin
+		case (count)
+		4'b0000 : begin a = 16'b1010101010101010; b = 16'b0101010101010101; end
+		4'b0001 : begin a = 16'b1111111111111111; b = 16'b1111111111111111; end
+		4'b0010 : begin a = 16'b0000000000000000; b = 16'b1111111110111111; end
+		default : begin a= 16'b0; b = 16'b0; end
+	endcase
+	end
+
+ 
+endmodule
