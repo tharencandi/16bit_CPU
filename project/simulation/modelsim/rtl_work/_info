@@ -1,0 +1,414 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/simulation/modelsim
+T_opt
+!s110 1652528700
+Vk;H=hJOO@Of5fNOe5>=AG0
+Z2 04 15 4 work control_unit_TB fast 0
+=1-fcaa14931a1c-627f963b-356-1c54
+Z3 !s124 OEM10U9 
+Z4 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1652528826
+VAkn=Qmcj6Nh53=WP?F^N03
+R2
+=1-fcaa14931a1c-627f96b9-e1-2180
+R3
+R4
+R5
+n@_opt1
+R6
+R1
+T_opt10
+!s110 1652531505
+Vh`aRn<9h^FMdP_L=ZFCfg0
+R2
+=1-fcaa14931a1c-627fa130-ee-1554
+R3
+R4
+R5
+n@_opt10
+R6
+R1
+T_opt11
+!s110 1652563321
+VET7jD[6dONRZY2cKJL?9H0
+R2
+=1-fcaa14931a1c-62801d78-d0-7a8
+R3
+R4
+R5
+n@_opt11
+R6
+R1
+T_opt12
+!s110 1652563501
+V:QkMcCEg_Z4Y?2B9NflX^1
+R2
+=1-fcaa14931a1c-62801e2c-d6-7e0
+R3
+R4
+R5
+n@_opt12
+R6
+R1
+T_opt13
+!s110 1652563833
+VP`U_c^zNJUl?@^;6iVmDL2
+R2
+=1-fcaa14931a1c-62801f78-3d8-24b4
+R3
+R4
+R5
+n@_opt13
+R6
+R1
+T_opt14
+!s110 1652564045
+VMDVL7n<61cM?<dUzaI24G0
+R2
+=1-fcaa14931a1c-6280204c-39c-3630
+R3
+R4
+R5
+n@_opt14
+R6
+R1
+T_opt15
+!s110 1652565008
+VLB0oK5TgH7S[7=E@Co`=H0
+R2
+=1-fcaa14931a1c-6280240f-174-23a8
+R3
+R4
+R5
+n@_opt15
+R6
+R1
+T_opt16
+!s110 1652601921
+VXW_NJQI7B]bcSS;9^SW9z3
+R2
+=1-fcaa14931a1c-6280b43f-32e-1778
+R3
+R4
+R5
+n@_opt16
+R6
+R1
+T_opt17
+!s110 1652602676
+Vj`Om6G1Y=bMMP_S5FikTN3
+R2
+=1-fcaa14931a1c-6280b733-1b3-17b8
+R3
+R4
+R5
+n@_opt17
+R6
+R1
+T_opt18
+!s110 1652602983
+VP1L_G]@zF3B?o[?ZClF;M0
+R2
+=1-fcaa14931a1c-6280b866-151-39c8
+R3
+R4
+R5
+n@_opt18
+R6
+R1
+T_opt19
+!s110 1652603343
+VzPgjCf1I8<0WooN@8F7@12
+R2
+=1-fcaa14931a1c-6280b9ce-65-15f0
+R3
+R4
+R5
+n@_opt19
+R6
+T_opt2
+!s110 1652529157
+V4GA20NmSXn7@RXeenafZY1
+R2
+=1-fcaa14931a1c-627f9804-2c0-15f4
+R3
+R4
+R5
+n@_opt2
+R6
+R1
+T_opt3
+!s110 1652529349
+V?Rn=XBAGXDZiJQZIaeNa@3
+R2
+=1-fcaa14931a1c-627f98c4-c4-f14
+R3
+R4
+R5
+n@_opt3
+R6
+R1
+T_opt4
+!s110 1652529840
+VOVBiL:?E:`>RFz>3D3dcz0
+R2
+=1-fcaa14931a1c-627f9aaf-398-2670
+R3
+R4
+R5
+n@_opt4
+R6
+R1
+T_opt5
+!s110 1652530017
+VdX_JNbF0zolhma6<=3;;60
+R2
+=1-fcaa14931a1c-627f9b60-62-1020
+R3
+R4
+R5
+n@_opt5
+R6
+R1
+T_opt6
+!s110 1652530327
+V>LOkaAQMn@d0QDS3S]1;f1
+R2
+=1-fcaa14931a1c-627f9c96-37c-1904
+R3
+R4
+R5
+n@_opt6
+R6
+R1
+T_opt7
+!s110 1652530907
+Vh0z]A:J]7Kl3M4YJWknR42
+R2
+=1-fcaa14931a1c-627f9eda-250-2f50
+R3
+R4
+R5
+n@_opt7
+R6
+R1
+T_opt8
+!s110 1652531018
+V7eG3nHRTEUBYXliihflAf1
+R2
+=1-fcaa14931a1c-627f9f49-90-e78
+R3
+R4
+R5
+n@_opt8
+R6
+R1
+T_opt9
+!s110 1652531362
+VIOQEWKKXMKkLj>PWOSclB3
+R2
+=1-fcaa14931a1c-627fa0a1-2a5-18c0
+R3
+R4
+R5
+n@_opt9
+R6
+R1
+vbinary_to_reg_sig
+Z7 !s110 1652603339
+!i10b 1
+!s100 LLPhl0Z;>=oi`cGY:6eLe3
+IIF@ghC>7Lf0cf_MZF_1321
+R1
+w1652528356
+8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v
+FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v
+!i122 6
+L0 1 23
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z10 !s108 1652603339.000000
+!s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v|
+!i113 0
+Z11 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z12 !s92 -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vcontrol_output
+R7
+!i10b 1
+!s100 m9n<MOXC1Kk4SA7`:k3JB0
+ITL]PohRcR3k[_2ITI]=5_1
+R1
+w1652603322
+8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v
+FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v
+!i122 7
+L0 1 91
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v|
+!i113 0
+R11
+R12
+R5
+vcontrol_unit
+Z13 !s110 1652603340
+!i10b 1
+!s100 5@io6=6O1CNLEj_KEWQMb3
+IR1l6nM:Y3G5XRNlC?9DBm3
+R1
+w1652531183
+8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v
+FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v
+!i122 8
+L0 1 22
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v|
+!i113 0
+R11
+R12
+R5
+vcontrol_unit_TB
+R13
+!i10b 1
+!s100 O:Xn3S:VHXYm;J@SbkdYK2
+I5lI1Kb2Gm6DX:KiTLalhF2
+R1
+w1652602962
+8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v
+FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v
+!i122 9
+L0 3 66
+R8
+R9
+r1
+!s85 0
+31
+Z14 !s108 1652603340.000000
+!s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v|
+!i113 0
+R11
+R12
+R5
+ncontrol_unit_@t@b
+vfour_bit_reg
+R13
+!i10b 1
+!s100 WR@G^cof<28zGB`4GTfXZ0
+I[OUC9LBH96SL_D^z0[9`@2
+R1
+w1652481319
+8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v
+FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v
+!i122 10
+Z15 L0 1 15
+R8
+R9
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v|
+!i113 0
+R11
+R12
+R5
+vnext_state
+R13
+!i10b 1
+!s100 WU=BnK:7b8aCA2RI<HOok2
+IDNMn?i0aoD4o:WI:^I8cW0
+R1
+w1652528672
+8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v
+FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v
+!i122 11
+L0 1 47
+R8
+R9
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v|
+!i113 0
+R11
+R12
+R5
+vsixteen_bit_reg
+!s110 1652603341
+!i10b 1
+!s100 <6e@B<2Ue8K@C?_T1T=gj2
+IhDnZ22HWGER`SE2o8R`CA0
+R1
+w1652527663
+8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v
+FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v
+!i122 12
+R15
+R8
+R9
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v|
+!i113 0
+R11
+R12
+R5

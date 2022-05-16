@@ -1,0 +1,121 @@
+module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, xorctrl, ctrl_out)
+	input [3:0] state;
+	input [15:0] instr;
+	output reg[7:0] rin, rout;
+	output reg gin, gout, pcin, pcout, addsub, addsub, xorctrl, ctrl_out;
+	output[15:0] bus;
+	wire [14:0] temp;
+	
+	assign temp = {instr[15:7], state};
+	
+	// d is put on bus when control_unit_out = 1
+	
+	
+	// 7 instructions
+	//8 rx possibilities
+	// 8 ry possibilites
+	
+	//rx = 12,11,10
+	//ry = 9,8,7
+	//d = 10 - 2
+	
+
+	
+	always @(temp) begin
+		casez(temp)
+		//load (one case for all value of rx)
+		14'b000zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b00000001; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b00000010; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b01000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111zzz0010: begin begin ctrl_out = 1'b1; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//move (rx * ry : 64 cases)
+		
+		//rx = 0
+		14'b000 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b00000001; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b000 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b00000010; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b000 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b00000100; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b000 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b00001000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b000 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b00010000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b000 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b00100000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b000 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b01000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b000 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000001; rout= = 8'b10000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//rx = 1
+		14'b001 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b00000001; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b00000010; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b00000100; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b00001000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b00010000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b00100000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b01000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b001 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000010; rout= = 8'b10000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//rx = 2
+		14'b010 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b010 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b00000100; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//rx = 3
+		14'b011 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b011 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b00001000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//rx = 4
+		14'b100 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b100 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b00010000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//rx = 5
+		14'b101 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b101 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//rx = 6
+		14'b110 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b110 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b00100000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		
+		//rx = 7
+		14'b111 000 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111 001 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111 010 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111 011 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111 100 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111 101 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111 110 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		14'b111 111 0011: begin begin ctrl_out = 1'b0; rin = 8'b10000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0;  end
+		default : begin begin ctrl_out = 1'b0; rin = 8'b00000000; rout= = 8'b00000000; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; xorctrl = 1'b0; end
+	endcase
+	end
+	
+endmodule

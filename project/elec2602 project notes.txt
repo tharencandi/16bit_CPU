@@ -1,0 +1,38 @@
+Computer project TODO
+
+- datapath module
+- ALU module
+	- 16 bit full adder module
+	- XOR module
+	- A register and accumulator 
+	- mux
+- register module
+	- 8 x 16 bit registers
+- 7 seg controller and decoder
+
+enhancements:
+- make function 4 bit adressable
+- make registers 4 bit addressable
+- leaves D as last 8 bits
+
+
+- add RAM for both program memory and data
+- to deal with limitations, we can add two new operatons for storing and retreiving from RAM
+	- RRET addr  (specify address, always register 0)
+	- RSAVE addr (specify address, always register 0)
+
+	- easier to implement but programmer has to keep track of address space
+
+- or we could implement stack operations
+	- POP Rx ( POP stack and put in RX)
+	- PUSH Rx (push value at Rx onto the stack)
+	- requires Stack pointer register
+	
+	- start stack at end of memory, start of memory is the actual program
+
+	- harder to implement but cooler
+
+	wikipedia: 
+	- simple processor use ALU to manipulate stack operations and use general register as the stack pointer
+	- more sophisticated processors have a stack engine and distinct stack reg	
+
