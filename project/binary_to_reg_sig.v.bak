@@ -1,0 +1,5 @@
+module binary_to_reg_sig(bin, r_sig)
+	input[2:0] bin;
+	output [7:0] r_sig;
+	
+	
