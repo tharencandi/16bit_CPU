@@ -1,7 +1,21 @@
 module datapath(clk, rst);
-
+	
+	/*
+		This cpu has:
+			- an instruction register that stores the current instruction
+			- a program counter to store the next instruction address
+			- RAM to store the program and data
+			- 8 x 16 bit general purpose registers 
+			- an ALU with:
+				- an adder and subtractor
+				- a XOR operation
+				- an accumulator register
+	*/
 	
 	
+	input clk, rst;
+	
+	wire [7:0] rin, rout;
 	wire instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
 	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
 	wire [15:0] ra_in, acc_out;
@@ -15,25 +29,31 @@ module datapath(clk, rst);
 	buff pc_out_buff(.a(instr_address),.b(bus),.enable(pc_out_ctrl));
 	
 	
-	
+	// RAM
 	ram_block ram(.addr(),.out(),.in(),.write_enable());
 	buff ram_out_buff(.a(),.b(),.enable());
 	
 	
-	control_unit control_unit_inst();
+	//CU
+	control_unit control_unit_inst
+	(	
+		.clk(clk), .rst(rst), .instr(instr), .rin(rin), 
+		.rout(rout), .gin(acc_enable), .gout(acc_out_ctrl), .pcin(pc_enable), 
+		.pcout(pc_out_ctrl), .addsub(addsub), .a_in(a_enable), 
+		.xorctrl(xor_ctrl), .ctrl_out(cu_out_ctrl), 
+		.out(cu_out), .new_instr(),.instr_ctrl(instr_ctrl)	
+	);
+	
 	buff ctrl_unit_out_buff(.a(cu_out),.b(bus),.enable(cu_out_ctrl));
 	
 	
 	// alu outputs accumulator register which needs to be dealt with by a tristate buffer
-	
 	alu alu_inst(
 		.clk(clk), .rst(rst), .a(bus),.a_enable(a_enable), 
 		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .out(acc_out)
 		);
 		
 	buff accumulator_buff(.a(acc_out),.b(bus),.enable(acc_out_ctrl));
-	
-	
 	
 	
 	/*

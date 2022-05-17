@@ -26,7 +26,7 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 
 	
 	always @(state) begin
-		casez(state)
+		case(state)
 		
 		//load (rx_in and ctrl_out)
 		4'b0010: begin ctrl_out = 1'b1; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
@@ -80,11 +80,12 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 	endcase
 	end
 	wire [2:0] temp1;
-	assign temp1 = instr[12:10];
-	binary_to_reg_sig get_rx_in(.bin(temp1), .enable(rx_in), .r_sig(rx_in_data));
-	binary_to_reg_sig get_rx_out(.bin(instr[12:10]), .enable(rx_out), .r_sig(rx_out_data));
-	binary_to_reg_sig get_ry_in(.bin(instr[9:7]), .enable(ry_in), .r_sig(ry_in_data));
-	binary_to_reg_sig get_ry_out(.bin(instr[9:7]), .enable(ry_out), .r_sig(ry_out_data));
+	assign rx = instr[11:8];
+	assign ry = instr[7:4];
+	binary_to_reg_sig get_rx_in(.bin(rx), .enable(rx_in), .r_sig(rx_in_data));
+	binary_to_reg_sig get_rx_out(.bin(rx), .enable(rx_out), .r_sig(rx_out_data));
+	binary_to_reg_sig get_ry_in(.bin(ry), .enable(ry_in), .r_sig(ry_in_data));
+	binary_to_reg_sig get_ry_out(.bin(ry), .enable(ry_out), .r_sig(ry_out_data));
 	
 	
 	
