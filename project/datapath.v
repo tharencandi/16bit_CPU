@@ -1,49 +1,59 @@
 module datapath(clk, rst);
 
 	
-	wire[15:0] bus, ctrl_output, r1_in,r2_in,r3_in, r4_in, r5_in, r6_in, r7_in, r8_in, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
+	
+	wire instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
+	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
 	wire [15:0] ra_in, acc_out;
 	
-	register_block registers(.clk(clk), .rst(rst), .r1_in(r1_in), .r2_in(r2_in),.r3_in(r3_in), .r4_in(r4_in), .r5_in(r5_in), .r6_in(r6_in), 
-		.r7_in(r7_in), .r8_in(r8_in), .r1_out(r1_out), .r2_out(r2_out),.r3_out(r3_out), .r4_out(r4_out), .r5_out(r5_out), .r6_out(r6_out), .r7_out(r7_out), .r8_out(r8_out));
 	
-	sixteen_bit_reg instruction_register();
+	//instruction register takes input from bus and outputs the next instruction which will be input to control unit
+	sixteen_bit_reg instruction_register(.clk(clk),.rst(rst),.D(bus),.Q(instr),.enable(instr_ctrl));
 	
-	sixten_bit_reg program_counter();
-	
-	ram_block ram(.addr(),.out(),.in());
-	
-	control_unit control_unit_inst();
-	
-	alu alu_inst(.clk(clk), .rst(rst), .a(), .b(bus), .addsub(), .xor_ctrl(), .out(acc_out));
-	buff a_reg_in_buff(.a(bus),.b(ra_in),.enable());
-	buff accumulator_buff(.a(acc_out),.b(bus),.enable());
+	//program counter will increment when enabled, or take input from bus based on select signal
+	program_counter pc(.clk(clk),.rst(rst), .sel(pcin), .in(bus), .out(instr_address),.enable(pc_enable));
+	buff pc_out_buff(.a(instr_address),.b(bus),.enable(pc_out_ctrl));
 	
 	
-	// tri state buffers
-	buff ctrl_unit_out_buff(.a(ctrl_output),.b(bus),.enable());
 	
-	buff pc_in_buff(.a(bus),.b(),.enable());
-	buff pc_out_buff(.a(),.b(bus),.enable());
-	
-	buff ram_in_buf(.a(),.b(),.enable());
+	ram_block ram(.addr(),.out(),.in(),.write_enable());
 	buff ram_out_buff(.a(),.b(),.enable());
 	
-	buff instr_in_buff(.a(),.b(),.enable());
-
-
+	
+	control_unit control_unit_inst();
+	buff ctrl_unit_out_buff(.a(cu_out),.b(bus),.enable(cu_out_ctrl));
 	
 	
-
+	// alu outputs accumulator register which needs to be dealt with by a tristate buffer
 	
-	buff r1_in_b(.a(bus),.b(r1_in),.enable(rin[0]));
-	buff r2_in_b(.a(bus),.b(r2_in),.enable(rin[1]));
-	buff r3_in_b(.a(bus),.b(r3_in),.enable(rin[2]));
-	buff r4_in_b(.a(bus),.b(r4_in),.enable(rin[3]));
-	buff r5_in_b(.a(bus),.b(r5_in),.enable(rin[4]));
-	buff r6_in_b(.a(bus),.b(r6_in),.enable(rin[5]));
-	buff r7_in_b(.a(bus),.b(r7_in),.enable(rin[6]));
-	buff r8_in_b(.a(bus),.b(r8_in),.enable(rin[7]));
+	alu alu_inst(
+		.clk(clk), .rst(rst), .a(bus),.a_enable(a_enable), 
+		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .out(acc_out)
+		);
+		
+	buff accumulator_buff(.a(acc_out),.b(bus),.enable(acc_out_ctrl));
+	
+	
+	
+	
+	/*
+	genvar i;
+	generate 
+		for (i = 0; i < 8; i += 1) begin
+		sixteen_bit_reg rk(.D(bus), .clk(clk), .rst(rst), .Q(r1_out),.enable(rin[i]));
+		end
+	endgenerate
+	*/
+	
+	// reg and tri-state-buffers
+	sixteen_bit_reg r1(.D(bus), .clk(clk), .rst(rst), .Q(r1_out),.enable(rin[0]));
+	sixteen_bit_reg r2(.D(bus), .clk(clk), .rst(rst), .Q(r2_out),.enable(rin[1]));
+	sixteen_bit_reg r3(.D(bus), .clk(clk), .rst(rst), .Q(r3_out),.enable(rin[2]));
+	sixteen_bit_reg r4(.D(bus), .clk(clk), .rst(rst), .Q(r4_out),.enable(rin[3]));
+	sixteen_bit_reg r5(.D(bus), .clk(clk), .rst(rst), .Q(r5_out),.enable(rin[4]));
+	sixteen_bit_reg r6(.D(bus), .clk(clk), .rst(rst), .Q(r6_out),.enable(rin[5]));
+	sixteen_bit_reg r7(.D(bus), .clk(clk), .rst(rst), .Q(r7_out),.enable(rin[6]));
+	sixteen_bit_reg r8(.D(bus), .clk(clk), .rst(rst), .Q(r8_out),.enable(rin[7]));
 	
 	buff r1_out_b(.a(r1_out),.b(bus),.enable(rout[0]));
 	buff r2_out_b(.a(r2_out),.b(bus),.enable(rout[1]));
