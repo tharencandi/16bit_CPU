@@ -12,10 +12,10 @@ module program_counter(clk, rst, p_in, bus, select, pc_enable, out);
 		mux_out <= bus
 	end
 		
-	always@(posedge clk or posedge pc_enable or posedge rst) begin
+	always@(posedge clk or posedge rst) begin
 		if (rst == 1'b1)
 			out <= 16'b0
-		else
+		else if(pc_enable == 1'b1)
 			out <= mux_out
 	end
 			
