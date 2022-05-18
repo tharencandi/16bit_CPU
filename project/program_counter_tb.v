@@ -11,23 +11,25 @@ module program_counter_tb;
   
 	initial begin 
 		count = 5'b0;
-		clk = 1'b1;
+		clk = 1'b0;
 	end
 	
 	always begin
 		
-		#25
-		clk = 1'b0;
-
-		#25
-		clk = 1'b1;
+		#50
+		clk = ~clk;
 		count=count+4'b0001;
+
+		
+	
+
 	end
   
   always@ (count) begin
   case(count) 
   4'b0000: begin rst = 1'b1; select = 1'b0; pc_enable = 1'b0; bus = 16'b0;end // resetting
-  4'b0010: begin rst = 1'b0; bus = 16'b0; select = 1'b0; pc_enable = 1'b1; end // out should equal p_in + 1 
+  4'b0010: begin rst = 1'b0; bus = 16'b0; select = 1'b0; pc_enable = 1'b1; end // out should equal p_in + 1
+  4'b0011: begin rst = 1'b0; bus = 16'b0; select = 1'b0; pc_enable = 1'b1; end // out should equal p_in + 1  
   4'b0100: begin rst = 1'b0; bus = 16'b0; select = 1'b0; pc_enable = 1'b0; end // should hold previous value
   4'b0110: begin rst = 1'b0; bus = 16'b111111; select = 1'b1; pc_enable = 1'b1; end // out should equal bus (1)
   default: begin rst = 1'b0; select = 1'b0; pc_enable = 1'b0; end  // should hold previous value 

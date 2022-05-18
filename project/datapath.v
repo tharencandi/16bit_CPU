@@ -10,16 +10,18 @@ module datapath(clk, rst);
 				- an adder and subtractor
 				- a XOR operation
 				- an accumulator register
+				- an an A reg
 	*/
 	
 	
 	input clk, rst;
 	
 	wire [7:0] rin, rout;
-	wire stack_ctrl, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
+	wire wren, stack_ctrl, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
 	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
 	wire [15:0] ra_in, acc_out;
-	
+	reg [15:0] ram_address;
+	wire [15:0] ram_out;
 	
 	//instruction register takes input from bus and outputs the next instruction which will be input to control unit
 	sixteen_bit_reg instruction_register(.clk(clk),.rst(rst),.D(bus),.Q(instr),.enable(instr_ctrl));
@@ -29,9 +31,9 @@ module datapath(clk, rst);
 	program_counter pc(.clk(clk),.rst(rst), .select(pcin), .bus(bus), .out(instr_address),.pc_enable(pc_enable));
 	buff pc_out_buff(.a(instr_address),.b(bus),.enable(pc_out_ctrl));
 	
-	wire wren;
-	reg [15:0] ram_address;
-	wire [15:0] ram_out;
+
+	
+	
 	always@(stack_ctrl) begin
 		if (stack_ctrl == 1'b1)
 			ram_address <= r8_out;
@@ -61,7 +63,7 @@ module datapath(clk, rst);
 	// alu outputs accumulator register which needs to be dealt with by a tristate buffer
 	alu alu_inst(
 		.clk(clk), .rst(rst), .a(bus),.a_enable(a_enable), 
-		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .out(acc_out)
+		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .out(acc_out), .acc_enable(acc_enable)
 		);
 		
 	buff accumulator_buff(.a(acc_out),.b(bus),.enable(acc_out_ctrl));

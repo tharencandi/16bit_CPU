@@ -7,7 +7,7 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 	reg rx_in,rx_out, ry_in, ry_out;
 	wire [7:0] rx_in_data, rx_out_data, ry_in_data, ry_out_data;
 	
-
+	
 	assign rin = rx_in_data | ry_in_data;
 	assign rout = rx_out_data | ry_out_data;
 	
@@ -73,7 +73,6 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 		
 		//add 2 (g_out, rx_in)
 		4'b1110: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end 
-		
 		
 		
 		default  : begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
