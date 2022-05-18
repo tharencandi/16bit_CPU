@@ -17,6 +17,10 @@ module program_counter(clk, rst, p_in, bus, select, pc_enable, out);
 			out <= 16'b0
 		else if (clk == 1'b1 && pc_enable == 1'b1)
 			out <= mux_out
+	end
+			
+endmodule
+			
 			
 		
 			
