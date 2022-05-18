@@ -1,0 +1,88 @@
+# Reading pref.tcl
+# do lab5_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is kisha@SENTIENT-BOX.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is kisha@SENTIENT-BOX.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is kisha@SENTIENT-BOX.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is kisha@SENTIENT-BOX.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is kisha@SENTIENT-BOX.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is kisha@SENTIENT-BOX.
+# vlib rtl_work
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/lab5\ elec2602/p3 {E:/lab5 elec2602/p3/fiftyMHz_counter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:29:22 on Apr 28,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab5 elec2602/p3" E:/lab5 elec2602/p3/fiftyMHz_counter.v 
+# -- Compiling module fiftyMHz_counter
+# 
+# Top level modules:
+# 	fiftyMHz_counter
+# End time: 12:29:23 on Apr 28,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/lab5\ elec2602/p3 {E:/lab5 elec2602/p3/fiftyMHz_counter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:29:23 on Apr 28,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab5 elec2602/p3" E:/lab5 elec2602/p3/fiftyMHz_counter.v 
+# -- Compiling module fiftyMHz_counter
+# 
+# Top level modules:
+# 	fiftyMHz_counter
+# End time: 12:29:23 on Apr 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab5\ elec2602/p3 {E:/lab5 elec2602/p3/lab5_part3_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:29:23 on Apr 28,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab5 elec2602/p3" E:/lab5 elec2602/p3/lab5_part3_TB.v 
+# -- Compiling module lab5_part3_TB
+# 
+# Top level modules:
+# 	lab5_part3_TB
+# End time: 12:29:23 on Apr 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab5\ elec2602/p3 {E:/lab5 elec2602/p3/lab5_part3.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:29:23 on Apr 28,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab5 elec2602/p3" E:/lab5 elec2602/p3/lab5_part3.v 
+# -- Compiling module lab5_part3
+# 
+# Top level modules:
+# 	lab5_part3
+# End time: 12:29:24 on Apr 28,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab5\ elec2602/p3 {E:/lab5 elec2602/p3/instantiate_lab5_part3.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:29:24 on Apr 28,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab5 elec2602/p3" E:/lab5 elec2602/p3/instantiate_lab5_part3.v 
+# -- Compiling module instantiate_lab5_part3
+# 
+# Top level modules:
+# 	instantiate_lab5_part3
+# End time: 12:29:24 on Apr 28,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  lab5_part3_TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" lab5_part3_TB 
+# Start time: 12:29:24 on Apr 28,2022
+# Loading work.lab5_part3_TB
+# Loading work.fiftyMHz_counter
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: kcha7976  Hostname: W63880T2  ProcessID: 10764
+#           Attempting to use alternate WLF file "./wlft1vvxdf".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft1vvxdf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 1 us

@@ -1,0 +1,10 @@
+module instantiate_lab4_part5(SW,HEX,KEY);
+
+input[9:0] SW;
+input[3:0] KEY;
+output[5:0] HEX;
+
+fourHexDisplay inst_fourHexdispl(.num1(SW[3:0]), .num2(SW[7:4]), .clk(KEY[1]), .rst(KEY[0]), .a2_h(HEX[0]), .a1_h(HEX[1]), .b2_h(HEX[2]), .b1_h(HEX[3]));
+
+endmodule
+

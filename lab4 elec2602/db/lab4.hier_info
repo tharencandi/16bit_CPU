@@ -1,0 +1,180 @@
+|instantiate_lab4_part5
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+HEX0[0] <= fourHexDisplay:inst_fourHexdispl.b1_h
+HEX0[1] <= fourHexDisplay:inst_fourHexdispl.b1_h
+HEX0[2] <= fourHexDisplay:inst_fourHexdispl.b1_h
+HEX0[3] <= fourHexDisplay:inst_fourHexdispl.b1_h
+HEX0[4] <= fourHexDisplay:inst_fourHexdispl.b1_h
+HEX0[5] <= fourHexDisplay:inst_fourHexdispl.b1_h
+HEX0[6] <= fourHexDisplay:inst_fourHexdispl.b1_h
+HEX1[0] <= fourHexDisplay:inst_fourHexdispl.b2_h
+HEX1[1] <= fourHexDisplay:inst_fourHexdispl.b2_h
+HEX1[2] <= fourHexDisplay:inst_fourHexdispl.b2_h
+HEX1[3] <= fourHexDisplay:inst_fourHexdispl.b2_h
+HEX1[4] <= fourHexDisplay:inst_fourHexdispl.b2_h
+HEX1[5] <= fourHexDisplay:inst_fourHexdispl.b2_h
+HEX1[6] <= fourHexDisplay:inst_fourHexdispl.b2_h
+HEX2[0] <= fourHexDisplay:inst_fourHexdispl.a1_h
+HEX2[1] <= fourHexDisplay:inst_fourHexdispl.a1_h
+HEX2[2] <= fourHexDisplay:inst_fourHexdispl.a1_h
+HEX2[3] <= fourHexDisplay:inst_fourHexdispl.a1_h
+HEX2[4] <= fourHexDisplay:inst_fourHexdispl.a1_h
+HEX2[5] <= fourHexDisplay:inst_fourHexdispl.a1_h
+HEX2[6] <= fourHexDisplay:inst_fourHexdispl.a1_h
+HEX3[0] <= fourHexDisplay:inst_fourHexdispl.a2_h
+HEX3[1] <= fourHexDisplay:inst_fourHexdispl.a2_h
+HEX3[2] <= fourHexDisplay:inst_fourHexdispl.a2_h
+HEX3[3] <= fourHexDisplay:inst_fourHexdispl.a2_h
+HEX3[4] <= fourHexDisplay:inst_fourHexdispl.a2_h
+HEX3[5] <= fourHexDisplay:inst_fourHexdispl.a2_h
+HEX3[6] <= fourHexDisplay:inst_fourHexdispl.a2_h
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+
+
+|instantiate_lab4_part5|fourHexDisplay:inst_fourHexdispl
+num1[0] => num1[0].IN2
+num1[1] => num1[1].IN2
+num1[2] => num1[2].IN2
+num1[3] => num1[3].IN2
+num2[0] => num2[0].IN2
+num2[1] => num2[1].IN2
+num2[2] => num2[2].IN2
+num2[3] => num2[3].IN2
+clk => clk.IN2
+rst => rst.IN2
+a2_h[0] <= binary_to_7Seg:binary_to_7SegA2_inst.sevenSeg
+a2_h[1] <= binary_to_7Seg:binary_to_7SegA2_inst.sevenSeg
+a2_h[2] <= binary_to_7Seg:binary_to_7SegA2_inst.sevenSeg
+a2_h[3] <= binary_to_7Seg:binary_to_7SegA2_inst.sevenSeg
+a2_h[4] <= binary_to_7Seg:binary_to_7SegA2_inst.sevenSeg
+a2_h[5] <= binary_to_7Seg:binary_to_7SegA2_inst.sevenSeg
+a2_h[6] <= binary_to_7Seg:binary_to_7SegA2_inst.sevenSeg
+a1_h[0] <= binary_to_7Seg:binary_to_7SegA1_inst.sevenSeg
+a1_h[1] <= binary_to_7Seg:binary_to_7SegA1_inst.sevenSeg
+a1_h[2] <= binary_to_7Seg:binary_to_7SegA1_inst.sevenSeg
+a1_h[3] <= binary_to_7Seg:binary_to_7SegA1_inst.sevenSeg
+a1_h[4] <= binary_to_7Seg:binary_to_7SegA1_inst.sevenSeg
+a1_h[5] <= binary_to_7Seg:binary_to_7SegA1_inst.sevenSeg
+a1_h[6] <= binary_to_7Seg:binary_to_7SegA1_inst.sevenSeg
+b2_h[0] <= binary_to_7Seg:binary_to_7SegB2_inst.sevenSeg
+b2_h[1] <= binary_to_7Seg:binary_to_7SegB2_inst.sevenSeg
+b2_h[2] <= binary_to_7Seg:binary_to_7SegB2_inst.sevenSeg
+b2_h[3] <= binary_to_7Seg:binary_to_7SegB2_inst.sevenSeg
+b2_h[4] <= binary_to_7Seg:binary_to_7SegB2_inst.sevenSeg
+b2_h[5] <= binary_to_7Seg:binary_to_7SegB2_inst.sevenSeg
+b2_h[6] <= binary_to_7Seg:binary_to_7SegB2_inst.sevenSeg
+b1_h[0] <= binary_to_7Seg:binary_to_7SegB1_inst.sevenSeg
+b1_h[1] <= binary_to_7Seg:binary_to_7SegB1_inst.sevenSeg
+b1_h[2] <= binary_to_7Seg:binary_to_7SegB1_inst.sevenSeg
+b1_h[3] <= binary_to_7Seg:binary_to_7SegB1_inst.sevenSeg
+b1_h[4] <= binary_to_7Seg:binary_to_7SegB1_inst.sevenSeg
+b1_h[5] <= binary_to_7Seg:binary_to_7SegB1_inst.sevenSeg
+b1_h[6] <= binary_to_7Seg:binary_to_7SegB1_inst.sevenSeg
+
+
+|instantiate_lab4_part5|fourHexDisplay:inst_fourHexdispl|fourbit_reg:fourb_reg1_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+rst => Q[0]~reg0.ACLR
+rst => Q[1]~reg0.ACLR
+rst => Q[2]~reg0.ACLR
+rst => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|instantiate_lab4_part5|fourHexDisplay:inst_fourHexdispl|fourbit_reg:fourb_reg2_inst
+D[0] => Q[0]~reg0.DATAIN
+D[1] => Q[1]~reg0.DATAIN
+D[2] => Q[2]~reg0.DATAIN
+D[3] => Q[3]~reg0.DATAIN
+clk => Q[0]~reg0.CLK
+clk => Q[1]~reg0.CLK
+clk => Q[2]~reg0.CLK
+clk => Q[3]~reg0.CLK
+rst => Q[0]~reg0.ACLR
+rst => Q[1]~reg0.ACLR
+rst => Q[2]~reg0.ACLR
+rst => Q[3]~reg0.ACLR
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|instantiate_lab4_part5|fourHexDisplay:inst_fourHexdispl|binary_to_7Seg:binary_to_7SegA1_inst
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|instantiate_lab4_part5|fourHexDisplay:inst_fourHexdispl|binary_to_7Seg:binary_to_7SegA2_inst
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|instantiate_lab4_part5|fourHexDisplay:inst_fourHexdispl|binary_to_7Seg:binary_to_7SegB1_inst
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|instantiate_lab4_part5|fourHexDisplay:inst_fourHexdispl|binary_to_7Seg:binary_to_7SegB2_inst
+binary[0] => Decoder0.IN3
+binary[1] => Decoder0.IN2
+binary[2] => Decoder0.IN1
+binary[3] => Decoder0.IN0
+sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

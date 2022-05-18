@@ -1,0 +1,13 @@
+module lab3_p2_v2 (v, d1, d2);
+    input [3:0] v; 
+	output reg[6:0] d1, d2; 
+	
+	always @(v) begin
+		case (v)
+		4'b0000 : begin d1 = 7'b???????; d2 = 7'b???????; end
+		...
+		default : begin ... end
+	endcase
+	end
+	
+endmodule;

@@ -1,0 +1,15 @@
+module lab3_p3_instantiate(SW,LEDR);
+
+	input[9:0] SW;
+	output [9:0] LEDR;
+	
+	//instantiate and connect fourBit_FA
+	/*
+		A is the first 4 switches
+		B is the next 4
+		The entire sum is leds 0-4 (because cout is the fifth bit)
+	*/
+	fourBit_FA inst(.a(SW[3:0]),.b(SW[7:4]),.cin(SW[9]),.cout(LEDR[4]),.s(LEDR[3:0]));
+	
+	
+endmodule

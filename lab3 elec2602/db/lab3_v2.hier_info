@@ -1,0 +1,164 @@
+|lab3_p4
+a[0] => a[0].IN2
+a[1] => a[1].IN2
+a[2] => a[2].IN2
+a[3] => a[3].IN2
+b[0] => b[0].IN2
+b[1] => b[1].IN2
+b[2] => b[2].IN2
+b[3] => b[3].IN2
+cin => cin.IN1
+display1[0] << lab3_p2_v2:displ_inst.d1
+display1[1] << lab3_p2_v2:displ_inst.d1
+display1[2] << lab3_p2_v2:displ_inst.d1
+display1[3] << lab3_p2_v2:displ_inst.d1
+display1[4] << lab3_p2_v2:displ_inst.d1
+display1[5] << lab3_p2_v2:displ_inst.d1
+display1[6] << lab3_p2_v2:displ_inst.d1
+display2[0] << lab3_p2_v2:displ_inst.d2
+display2[1] << lab3_p2_v2:displ_inst.d2
+display2[2] << lab3_p2_v2:displ_inst.d2
+display2[3] << lab3_p2_v2:displ_inst.d2
+display2[4] << lab3_p2_v2:displ_inst.d2
+display2[5] << lab3_p2_v2:displ_inst.d2
+display2[6] << lab3_p2_v2:displ_inst.d2
+warning << comparator_7seg:c7s_inst.z
+
+
+|lab3_p4|comparator_7seg:c7s_inst
+a[0] => LessThan0.IN8
+a[1] => LessThan0.IN7
+a[2] => LessThan0.IN6
+a[3] => LessThan0.IN5
+b[0] => LessThan1.IN8
+b[1] => LessThan1.IN7
+b[2] => LessThan1.IN6
+b[3] => LessThan1.IN5
+z[0] <= always0.DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= <GND>
+z[2] <= <GND>
+z[3] <= <GND>
+
+
+|lab3_p4|fourBit_FA:fa_inst
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+cin => cin.IN1
+cout <= FA:fa4.cout
+s[0] <= FA:fa1.s
+s[1] <= FA:fa2.s
+s[2] <= FA:fa3.s
+s[3] <= FA:fa4.s
+
+
+|lab3_p4|fourBit_FA:fa_inst|FA:fa1
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+b => s.IN1
+b => s.IN1
+cin => s.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+cin => s.IN1
+cin => s.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3_p4|fourBit_FA:fa_inst|FA:fa2
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+b => s.IN1
+b => s.IN1
+cin => s.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+cin => s.IN1
+cin => s.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3_p4|fourBit_FA:fa_inst|FA:fa3
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+b => s.IN1
+b => s.IN1
+cin => s.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+cin => s.IN1
+cin => s.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3_p4|fourBit_FA:fa_inst|FA:fa4
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+a => s.IN0
+a => s.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+b => s.IN1
+b => s.IN1
+cin => s.IN1
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+cin => s.IN1
+cin => s.IN1
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3_p4|lab3_p2_v2:displ_inst
+v[0] => Decoder0.IN3
+v[1] => Decoder0.IN2
+v[2] => Decoder0.IN1
+v[3] => Decoder0.IN0
+d1[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+d1[1] <= <GND>
+d1[2] <= <GND>
+d1[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+d1[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+d1[5] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+d1[6] <= <VCC>
+d2[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+d2[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+d2[2] <= d2.DB_MAX_OUTPUT_PORT_TYPE
+d2[3] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+d2[4] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+d2[5] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+d2[6] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+
+

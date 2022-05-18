@@ -1,0 +1,144 @@
+# Reading pref.tcl
+# do lab6_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/lab5\ elec2602/p1 {E:/lab5 elec2602/p1/binary_to_7Seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:24 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab5 elec2602/p1" E:/lab5 elec2602/p1/binary_to_7Seg.v 
+# -- Compiling module binary_to_7Seg
+# 
+# Top level modules:
+# 	binary_to_7Seg
+# End time: 13:06:24 on May 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/state_reg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:24 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/state_reg.v 
+# -- Compiling module state_reg
+# 
+# Top level modules:
+# 	state_reg
+# End time: 13:06:24 on May 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/output_sig.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:24 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/output_sig.v 
+# -- Compiling module output_sig
+# 
+# Top level modules:
+# 	output_sig
+# End time: 13:06:25 on May 05,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/next_state.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:25 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/next_state.v 
+# -- Compiling module next_state
+# 
+# Top level modules:
+# 	next_state
+# End time: 13:06:25 on May 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/four1s_four0s.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:25 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/four1s_four0s.v 
+# -- Compiling module four1s_four0s
+# 
+# Top level modules:
+# 	four1s_four0s
+# End time: 13:06:25 on May 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/inst_seq_detect.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:25 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/inst_seq_detect.v 
+# -- Compiling module inst_seq_detect
+# 
+# Top level modules:
+# 	inst_seq_detect
+# End time: 13:06:25 on May 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/four1s_four0s.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:25 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/four1s_four0s.v 
+# -- Compiling module four1s_four0s
+# 
+# Top level modules:
+# 	four1s_four0s
+# End time: 13:06:26 on May 05,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/lab6_p1_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:26 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/lab6_p1_TB.v 
+# -- Compiling module lab6_p1_TB
+# 
+# Top level modules:
+# 	lab6_p1_TB
+# End time: 13:06:26 on May 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/next_state.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:26 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/next_state.v 
+# -- Compiling module next_state
+# 
+# Top level modules:
+# 	next_state
+# End time: 13:06:26 on May 05,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab6\ elec2602/part1 {E:/lab6 elec2602/part1/output_sig.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:06:26 on May 05,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab6 elec2602/part1" E:/lab6 elec2602/part1/output_sig.v 
+# -- Compiling module output_sig
+# 
+# Top level modules:
+# 	output_sig
+# End time: 13:06:27 on May 05,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  lab6_p1_TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" lab6_p1_TB 
+# Start time: 13:06:27 on May 05,2022
+# Loading work.lab6_p1_TB
+# Loading work.four1s_four0s
+# Loading work.state_reg
+# Loading work.next_state
+# Loading work.output_sig
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_poo'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /lab6_p1_TB/inst_poo File: E:/lab6 elec2602/part1/lab6_p1_TB.v Line: 7
+# ** Warning: (vsim-3722) E:/lab6 elec2602/part1/lab6_p1_TB.v(7): [TFMPC] - Missing connection for port 'curr_state'.
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: kcha7976  Hostname: W63880T2  ProcessID: 15936
+#           Attempting to use alternate WLF file "./wlft4zwv4n".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft4zwv4n
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 1 us
+add wave -position end  sim:/lab6_p1_TB/inst_poo/inst_statereg/Q
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'inst_poo'.  Expected 5, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /lab6_p1_TB/inst_poo File: E:/lab6 elec2602/part1/lab6_p1_TB.v Line: 7
+# ** Warning: (vsim-3722) E:/lab6 elec2602/part1/lab6_p1_TB.v(7): [TFMPC] - Missing connection for port 'curr_state'.
+run 1us

@@ -1,0 +1,15 @@
+module gated_RS (clk, R, S, Q, Qnot);
+   input  R, S, clk;
+   output Q, Qnot;
+	
+   wire   R_g, S_g, Qa, Qb /* synthesis keep */;
+	
+   assign R_g = ;
+	assign S_g = ;
+	assign Qa = ;
+	assign Qb = ;
+	
+	assign Q = Qa;
+	assign Qnot = Qb;
+	
+endmodule

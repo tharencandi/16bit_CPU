@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at fourbit_counter.v(7): always construct contains both blocking and non-blocking assignments File: E:/lab6 elec2602/part2/fourbit_counter.v Line: 7
