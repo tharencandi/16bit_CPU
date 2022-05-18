@@ -1,0 +1,9 @@
+module lab3_p2_instantiate(SW,HEX0, HEX1);
+
+	input[9:0] SW;
+	output [6:0] HEX0;
+	output [6:0] HEX1;
+	lab3_p2_v2 blahblah(.v(SW), .d1(HEX1), .d2(HEX0));
+	
+	
+endmodule

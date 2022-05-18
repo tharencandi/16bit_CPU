@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at Toggle_FF.v(6): always construct contains both blocking and non-blocking assignments File: E:/lab5 elec2602/p1/Toggle_FF.v Line: 6
+Warning (10268): Verilog HDL information at bs_counter.v(7): always construct contains both blocking and non-blocking assignments File: E:/lab5 elec2602/p1/bs_counter.v Line: 7

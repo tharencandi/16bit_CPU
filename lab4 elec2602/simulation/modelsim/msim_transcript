@@ -1,0 +1,113 @@
+# Reading pref.tcl
+# do lab4_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/fourHexDisplay.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:54 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/fourHexDisplay.v 
+# -- Compiling module fourHexDisplay
+# 
+# Top level modules:
+# 	fourHexDisplay
+# End time: 13:08:55 on Apr 14,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/binary_to_7Seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:55 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/binary_to_7Seg.v 
+# -- Compiling module binary_to_7Seg
+# 
+# Top level modules:
+# 	binary_to_7Seg
+# End time: 13:08:55 on Apr 14,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/4b_reg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:55 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/4b_reg.v 
+# -- Compiling module fourbit_reg
+# 
+# Top level modules:
+# 	fourbit_reg
+# End time: 13:08:55 on Apr 14,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/4b_reg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:55 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/4b_reg.v 
+# -- Compiling module fourbit_reg
+# 
+# Top level modules:
+# 	fourbit_reg
+# End time: 13:08:56 on Apr 14,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/binary_to_7Seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:56 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/binary_to_7Seg.v 
+# -- Compiling module binary_to_7Seg
+# 
+# Top level modules:
+# 	binary_to_7Seg
+# End time: 13:08:56 on Apr 14,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/fourHexDisplay.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:56 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/fourHexDisplay.v 
+# -- Compiling module fourHexDisplay
+# 
+# Top level modules:
+# 	fourHexDisplay
+# End time: 13:08:56 on Apr 14,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/instantiate_lab4_part5.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:56 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/instantiate_lab4_part5.v 
+# -- Compiling module instantiate_lab4_part5
+# 
+# Top level modules:
+# 	instantiate_lab4_part5
+# End time: 13:08:56 on Apr 14,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/lab4\ elec2602/Part\ 5 {E:/lab4 elec2602/Part 5/lab4_part5_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:56 on Apr 14,2022
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/lab4 elec2602/Part 5" E:/lab4 elec2602/Part 5/lab4_part5_TB.v 
+# -- Compiling module lab4_part5_TB
+# 
+# Top level modules:
+# 	lab4_part5_TB
+# End time: 13:08:57 on Apr 14,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  lab4_part5_TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" lab4_part5_TB 
+# Start time: 13:08:57 on Apr 14,2022
+# Loading work.lab4_part5_TB
+# Loading work.fourHexDisplay
+# Loading work.fourbit_reg
+# Loading work.binary_to_7Seg
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: kcha7976  Hostname: W63880T2  ProcessID: 3136
+#           Attempting to use alternate WLF file "./wlftk86eik".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftk86eik
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 1 us

@@ -1,0 +1,12 @@
+module comparator_7seg (v, z);
+	input [3:0] v; 	
+	output reg [3:0] z; 
+	
+	always @(v)
+	begin
+	  if (v > 7)
+		z = 4'b0000;
+	  else
+		z = v;
+	end
+endmodule

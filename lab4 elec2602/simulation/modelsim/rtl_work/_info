@@ -1,0 +1,134 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/lab4 elec2602/simulation/modelsim
+vbinary_to_7Seg
+Z1 !s110 1649905736
+!i10b 1
+!s100 D]Y9m5RmU[RmTJJJBE^Ed1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IX=<baMWi8_?9DBQ4=OMd01
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1648090982
+8E:/lab4 elec2602/Part 5/binary_to_7Seg.v
+FE:/lab4 elec2602/Part 5/binary_to_7Seg.v
+!i122 4
+L0 1 28
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1649905736.000000
+!s107 E:/lab4 elec2602/Part 5/binary_to_7Seg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab4 elec2602/Part 5|E:/lab4 elec2602/Part 5/binary_to_7Seg.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work {+incdir+E:/lab4 elec2602/Part 5}
+Z8 tCvgOpt 0
+nbinary_to_7@seg
+vfourbit_reg
+R1
+!i10b 1
+!s100 9XzRz:@V3XM8z:z:Gn^lm2
+R2
+I@lCHehBT;NeGYVlE9LlO@2
+R3
+R0
+w1649466552
+8E:/lab4 elec2602/Part 5/4b_reg.v
+FE:/lab4 elec2602/Part 5/4b_reg.v
+!i122 3
+L0 1 12
+R4
+r1
+!s85 0
+31
+!s108 1649905735.000000
+!s107 E:/lab4 elec2602/Part 5/4b_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab4 elec2602/Part 5|E:/lab4 elec2602/Part 5/4b_reg.v|
+!i113 1
+R6
+R7
+R8
+vfourHexDisplay
+R1
+!i10b 1
+!s100 d5;MUTdX0l]WUKG?9CBB53
+R2
+ILnZn7bo;l:DG4ReKB;WNA2
+R3
+R0
+w1649904010
+8E:/lab4 elec2602/Part 5/fourHexDisplay.v
+FE:/lab4 elec2602/Part 5/fourHexDisplay.v
+!i122 5
+L0 1 21
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/lab4 elec2602/Part 5/fourHexDisplay.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab4 elec2602/Part 5|E:/lab4 elec2602/Part 5/fourHexDisplay.v|
+!i113 1
+R6
+R7
+R8
+nfour@hex@display
+vinstantiate_lab4_part5
+R1
+!i10b 1
+!s100 PgRFmL5JkIzbae^=h5El>1
+R2
+I>3aY0c`9cf:OQ;lGP130E2
+R3
+R0
+w1649903408
+8E:/lab4 elec2602/Part 5/instantiate_lab4_part5.v
+FE:/lab4 elec2602/Part 5/instantiate_lab4_part5.v
+!i122 6
+L0 1 9
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/lab4 elec2602/Part 5/instantiate_lab4_part5.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab4 elec2602/Part 5|E:/lab4 elec2602/Part 5/instantiate_lab4_part5.v|
+!i113 1
+R6
+R7
+R8
+vlab4_part5_TB
+!s110 1649905737
+!i10b 1
+!s100 Zdh:8_Go:QlfQh>13c4T13
+R2
+I=`;7L:6E5^LQah_U4=S9_3
+R3
+R0
+w1649904900
+8E:/lab4 elec2602/Part 5/lab4_part5_TB.v
+FE:/lab4 elec2602/Part 5/lab4_part5_TB.v
+!i122 7
+L0 3 53
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/lab4 elec2602/Part 5/lab4_part5_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab4 elec2602/Part 5|E:/lab4 elec2602/Part 5/lab4_part5_TB.v|
+!i113 1
+R6
+R7
+R8
+nlab4_part5_@t@b

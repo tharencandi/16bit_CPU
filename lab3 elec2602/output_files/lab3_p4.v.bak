@@ -1,0 +1,8 @@
+module lab3_p4(a,b, cin, display1, display2);
+
+input [3:0] a, b;
+output [7:0] display1, display2
+
+wire [3:0] comp_a, comp_b;
+
+comparator_7seg c7s_inst(.v(), .z(), .

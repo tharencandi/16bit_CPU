@@ -1,0 +1,14 @@
+module binary_to_7Seg(binary, sevenSeg);
+
+	input[3:0] binary;
+	output reg[6:0]  sevenSeg;
+	
+	always @(binary) begin
+		case (binary)
+		4'b0000 : begin sevenSeg = 7'b???????; end
+		...
+		default : begin ... end
+	endcase
+	end
+ 
+endmodule
