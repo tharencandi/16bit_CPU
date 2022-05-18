@@ -25,12 +25,13 @@ module control_unit_TB;
 	
 	always begin
 		
-		#25
+		#50
 		clk = 1'b0;
-
-		#25
-		clk = 1'b1;
 		count=count+4'b0001;
+
+		#50
+		clk = 1'b1;
+		
 	end
 	
 	always @(count) begin

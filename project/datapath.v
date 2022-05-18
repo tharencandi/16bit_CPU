@@ -16,7 +16,7 @@ module datapath(clk, rst);
 	input clk, rst;
 	
 	wire [7:0] rin, rout;
-	wire ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
+	wire stack_ctrl, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
 	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
 	wire [15:0] ra_in, acc_out;
 	
@@ -25,11 +25,13 @@ module datapath(clk, rst);
 	sixteen_bit_reg instruction_register(.clk(clk),.rst(rst),.D(bus),.Q(instr),.enable(instr_ctrl));
 	
 	//program counter will increment when enabled, or take input from bus based on select signal
-	program_counter pc(.clk(clk),.rst(rst), .sel(pcin), .in(bus), .out(instr_address),.enable(pc_enable));
+	
+	program_counter pc(.clk(clk),.rst(rst), .select(pcin), .bus(bus), .out(instr_address),.pc_enable(pc_enable));
 	buff pc_out_buff(.a(instr_address),.b(bus),.enable(pc_out_ctrl));
 	
-	
-	wire [15:0] ram_address, ram_out;
+	wire wren;
+	reg [15:0] ram_address;
+	wire [15:0] ram_out;
 	always@(stack_ctrl) begin
 		if (stack_ctrl == 1'b1)
 			ram_address <= r8_out;
@@ -39,7 +41,7 @@ module datapath(clk, rst);
 		
 			
 	// RAM
-	RAM_Port1 (.address(ram_address), .clock(clk), .data(bus), .wren(0'b0), .q(ram_out));
+	RAM_Port1 (.address(ram_address), .clock(clk), .data(bus), .wren(wren), .q(ram_out));
 	buff ram_out_buff(.a(ram_out),.b(bus),.enable(ram_out_ctrl));
 	
 	
