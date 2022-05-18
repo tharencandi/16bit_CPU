@@ -32,8 +32,6 @@
 //refer to the applicable agreement for further details, at
 //https://fpgasoftware.intel.com/eula.
 
-/*
-
 module RAM_Port1 (
 	address,
 	clock,
@@ -55,7 +53,7 @@ module RAM_Port1 (
 `endif
 
 endmodule
-*/
+
 // ============================================================
 // CNX file retrieval info
 // ============================================================

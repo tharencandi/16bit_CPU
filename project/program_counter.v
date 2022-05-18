@@ -6,7 +6,7 @@ module program_counter(clk, rst, bus, select, pc_enable, out);
 	reg [15:0] mux_out;
 	
 	//works
-	always @(select or out) begin
+	always @(select or out or bus) begin
 		if (select == 1'b0)
 			mux_out = out + 1'b1;
 		else
