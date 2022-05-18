@@ -1,5 +1,5 @@
 Flow report for simple_processor
-Sun May 15 07:33:52 2022
+Wed May 18 15:52:23 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Sun May 15 07:33:52 2022       ;
+; Flow Status                 ; Successful - Wed May 18 15:52:23 2022       ;
 ; Quartus Prime Version       ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name               ; simple_processor                            ;
 ; Top-level Entity Name       ; control_unit_TB                             ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/15/2022 07:33:44 ;
+; Start date & time ; 05/18/2022 15:52:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; simple_processor    ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+------------------+-----------------+-----------------+
 ; Assignment Name                      ; Value                                  ; Default Value    ; Entity Name     ; Section Id      ;
 +--------------------------------------+----------------------------------------+------------------+-----------------+-----------------+
-; COMPILER_SIGNATURE_ID                ; 277807419824668.165256402413304        ; --               ; --              ; --              ;
+; COMPILER_SIGNATURE_ID                ; 10995770589207.165285312704052         ; --               ; --              ; --              ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --               ; --              ; control_unit_TB ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; control_unit_TB                        ; --               ; --              ; eda_simulation  ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --               ; --              ; eda_simulation  ;
@@ -108,8 +108,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:09     ; 1.0                     ; 4780 MB             ; 00:00:16                           ;
-; Total                  ; 00:00:09     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Elaboration ; 00:00:17     ; 1.0                     ; 4785 MB             ; 00:00:36                           ;
+; Total                  ; 00:00:17     ; --                      ; --                  ; 00:00:36                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,7 +118,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------------------+------------+------------+----------------+
 ; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; DESKTOP-N0A84HG  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Elaboration ; LAPTOP-XPS       ; Windows 10 ; 10.0       ; x86_64         ;
 +------------------------+------------------+------------+------------+----------------+
 
 

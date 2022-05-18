@@ -1,5 +1,6 @@
-module sixteen_bit_reg(D, clk, rst, Q);
-
+module sixteen_bit_reg(D, clk, rst, Q, enable);
+	
+	input enable;
 	input[15:0] D;
 	input clk, rst;
 	output reg [15:0] Q;
@@ -8,7 +9,7 @@ module sixteen_bit_reg(D, clk, rst, Q);
 
 		if (rst == 1'b1)
 			Q <= 16'b0;
-		else 
+		else if (enable == 1'b1)
 			Q <= D;
 		end
 		

@@ -16,7 +16,7 @@ module datapath(clk, rst);
 	input clk, rst;
 	
 	wire [7:0] rin, rout;
-	wire ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
+	wire instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
 	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
 	wire [15:0] ra_in, acc_out;
 	
@@ -29,18 +29,9 @@ module datapath(clk, rst);
 	buff pc_out_buff(.a(instr_address),.b(bus),.enable(pc_out_ctrl));
 	
 	
-	wire [15:0] ram_address, ram_out;
-	always@(stack_ctrl) begin
-		if (stack_ctrl == 1'b1)
-			ram_address <= r8_out;
-		else 
-			ram_address <= instr_address;
-	end
-		
-			
 	// RAM
-	RAM_Port1 (.address(ram_address), .clock(clk), .data(bus), .wren(0'b0), .q(ram_out));
-	buff ram_out_buff(.a(ram_out),.b(bus),.enable(ram_out_ctrl));
+	ram_block ram(.addr(),.out(),.in(),.write_enable());
+	buff ram_out_buff(.a(),.b(),.enable());
 	
 	
 	//CU

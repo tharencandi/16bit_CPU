@@ -79,7 +79,7 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 		default  : begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
 	endcase
 	end
-	wire [2:0] temp1;
+	wire [3:0] rx, ry;
 	assign rx = instr[11:8];
 	assign ry = instr[7:4];
 	binary_to_reg_sig get_rx_in(.bin(rx), .enable(rx_in), .r_sig(rx_in_data));

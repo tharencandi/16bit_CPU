@@ -23,6 +23,10 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -162,6 +166,7 @@ R4
 R5
 n@_opt19
 R6
+R1
 T_opt2
 !s110 1652529157
 V4GA20NmSXn7@RXeenafZY1
@@ -173,6 +178,49 @@ R5
 n@_opt2
 R6
 R1
+T_opt20
+!s110 1652853212
+VjZdEHR@8L?fTh0G1]ghjO3
+R2
+=1-9cb6d088964f-628489d6-3c3-2630
+R3
+R4
+R5
+n@_opt20
+R6
+R1
+T_opt21
+!s110 1652853611
+V>5=<aD;8<2NnB;[24P2A22
+R2
+=1-9cb6d088964f-62848b6a-14a-ee0
+R3
+R4
+R5
+n@_opt21
+R6
+R1
+T_opt22
+!s110 1652854009
+V8=[E:Cm<?3S0kXo=CBZOO3
+R2
+=1-9cb6d088964f-62848cf8-9e-1614
+R3
+R4
+R5
+n@_opt22
+R6
+R1
+T_opt23
+!s110 1652854294
+VlK?4i^K60ElL8fV4VH`9D3
+R2
+=1-9cb6d088964f-62848e14-1a1-4494
+R3
+R4
+R5
+n@_opt23
+R6
 T_opt3
 !s110 1652529349
 V?Rn=XBAGXDZiJQZIaeNa@3
@@ -251,12 +299,12 @@ n@_opt9
 R6
 R1
 vbinary_to_reg_sig
-Z7 !s110 1652603339
+Z7 !s110 1652854287
 !i10b 1
-!s100 LLPhl0Z;>=oi`cGY:6eLe3
-IIF@ghC>7Lf0cf_MZF_1321
+!s100 cB8VLkg8zVEY9D3]GPhC93
+IVd4YT`K@oEOIzh:G71TG?0
 R1
-w1652528356
+w1652853945
 8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v
 FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v
 !i122 6
@@ -266,66 +314,66 @@ Z9 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z10 !s108 1652603339.000000
+!s108 1652854286.000000
 !s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v|
 !i113 0
-Z11 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z12 !s92 -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 !s92 -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R5
 vcontrol_output
 R7
 !i10b 1
-!s100 m9n<MOXC1Kk4SA7`:k3JB0
-ITL]PohRcR3k[_2ITI]=5_1
+!s100 E:7EOGQkhfGcf4IM6oH=n2
+Ie]NAHREPim84onKOn9[Vl1
 R1
-w1652603322
+w1652854263
 8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v
 FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v
 !i122 7
-L0 1 91
+L0 1 92
 R8
 R9
 r1
 !s85 0
 31
-R10
+Z12 !s108 1652854287.000000
 !s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v|
 !i113 0
+R10
 R11
-R12
 R5
 vcontrol_unit
-Z13 !s110 1652603340
+R7
 !i10b 1
-!s100 5@io6=6O1CNLEj_KEWQMb3
-IR1l6nM:Y3G5XRNlC?9DBm3
+!s100 dT9UIm=cQ2<`TN0107`_k2
+Ic^2^h2`N8N9EjD`WY>A@93
 R1
-w1652531183
+w1652852771
 8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v
 FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v
 !i122 8
-L0 1 22
+L0 1 29
 R8
 R9
 r1
 !s85 0
 31
-R10
+R12
 !s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v|
 !i113 0
+R10
 R11
-R12
 R5
 vcontrol_unit_TB
-R13
+Z13 !s110 1652854288
 !i10b 1
-!s100 O:Xn3S:VHXYm;J@SbkdYK2
-I5lI1Kb2Gm6DX:KiTLalhF2
+!s100 ?>6kFnS5oH4U`jz<Z83Vb1
+IgB7_;6>X9IQ7Gm9;bmkzU0
 R1
-w1652602962
+w1652852772
 8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v
 FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v
 !i122 9
@@ -335,12 +383,12 @@ R9
 r1
 !s85 0
 31
-Z14 !s108 1652603340.000000
+R12
 !s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v|
 !i113 0
+R10
 R11
-R12
 R5
 ncontrol_unit_@t@b
 vfour_bit_reg
@@ -349,30 +397,30 @@ R13
 !s100 WR@G^cof<28zGB`4GTfXZ0
 I[OUC9LBH96SL_D^z0[9`@2
 R1
-w1652481319
+w1652852781
 8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v
 FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v
 !i122 10
-Z15 L0 1 15
+L0 1 15
 R8
 R9
 r1
 !s85 0
 31
-R14
+Z14 !s108 1652854288.000000
 !s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v|
 !i113 0
+R10
 R11
-R12
 R5
 vnext_state
-R13
+Z15 !s110 1652854289
 !i10b 1
-!s100 WU=BnK:7b8aCA2RI<HOok2
-IDNMn?i0aoD4o:WI:^I8cW0
+!s100 g;E^9XXE31]14BVfi1R3:3
+I?=[Y`m9GonZ7facTXB>UD0
 R1
-w1652528672
+w1652853585
 8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v
 FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v
 !i122 11
@@ -386,29 +434,29 @@ R14
 !s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v|
 !i113 0
+R10
 R11
-R12
 R5
 vsixteen_bit_reg
-!s110 1652603341
+R15
 !i10b 1
-!s100 <6e@B<2Ue8K@C?_T1T=gj2
-IhDnZ22HWGER`SE2o8R`CA0
+!s100 EcWL>@E?lkSD_m?Q9zId;3
+I[TnBB=B4_PWzeF4n0ZoG?1
 R1
-w1652527663
+w1652853892
 8C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v
 FC:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v
 !i122 12
-R15
+L0 1 16
 R8
 R9
 r1
 !s85 0
 31
-R14
+!s108 1652854289.000000
 !s107 C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project|C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v|
 !i113 0
+R10
 R11
-R12
 R5

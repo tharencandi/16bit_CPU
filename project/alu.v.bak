@@ -1,0 +1,9 @@
+module alu(ain, addsub, xor_ctrl, gout, gin, busin, busout)
+	
+	
+	
+	sixteenBit_FA adder_circuit(.a(),.b(),.cin(),.cout(),.s());
+	sixteen_bit_xor xor_circuit(.a(),.b(),.out());
+
+
+	sixteen_bit_reg accumulator(.D(),.)

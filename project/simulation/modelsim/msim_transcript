@@ -28,7 +28,11 @@
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt16".  Locker is thare@DESKTOP-N0A84HG.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt17".  Locker is thare@DESKTOP-N0A84HG.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt18".  Locker is thare@DESKTOP-N0A84HG.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt19".  Locker is thare@DESKTOP-N0A84HG.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is thare@DESKTOP-N0A84HG.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt20".  Locker is thare@LAPTOP-XPS.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt21".  Locker is thare@LAPTOP-XPS.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt22".  Locker is thare@LAPTOP-XPS.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is thare@DESKTOP-N0A84HG.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is thare@DESKTOP-N0A84HG.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is thare@DESKTOP-N0A84HG.
@@ -47,140 +51,143 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:57 on May 15,2022
+# Start time: 16:11:23 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 18:28:57 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:24 on May 18,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:57 on May 15,2022
+# Start time: 16:11:24 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v 
 # -- Compiling module next_state
 # 
 # Top level modules:
 # 	next_state
-# End time: 18:28:57 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:24 on May 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:57 on May 15,2022
+# Start time: 16:11:24 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v 
 # -- Compiling module four_bit_reg
 # 
 # Top level modules:
 # 	four_bit_reg
-# End time: 18:28:58 on May 15,2022, Elapsed time: 0:00:01
+# End time: 16:11:25 on May 18,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:58 on May 15,2022
+# Start time: 16:11:25 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v 
 # -- Compiling module control_output
 # 
 # Top level modules:
 # 	control_output
-# End time: 18:28:58 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:25 on May 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:58 on May 15,2022
+# Start time: 16:11:25 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v 
 # -- Compiling module binary_to_reg_sig
 # 
 # Top level modules:
 # 	binary_to_reg_sig
-# End time: 18:28:58 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:26 on May 18,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:58 on May 15,2022
+# Start time: 16:11:26 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v 
 # -- Compiling module control_unit_TB
 # 
 # Top level modules:
 # 	control_unit_TB
-# End time: 18:28:59 on May 15,2022, Elapsed time: 0:00:01
+# End time: 16:11:26 on May 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:59 on May 15,2022
+# Start time: 16:11:26 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/binary_to_reg_sig.v 
 # -- Compiling module binary_to_reg_sig
 # 
 # Top level modules:
 # 	binary_to_reg_sig
-# End time: 18:28:59 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:27 on May 18,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:59 on May 15,2022
+# Start time: 16:11:27 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_output.v 
 # -- Compiling module control_output
 # 
 # Top level modules:
 # 	control_output
-# End time: 18:28:59 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:27 on May 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:28:59 on May 15,2022
+# Start time: 16:11:27 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 18:29:00 on May 15,2022, Elapsed time: 0:00:01
+# End time: 16:11:27 on May 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:29:00 on May 15,2022
+# Start time: 16:11:27 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v 
 # -- Compiling module control_unit_TB
 # 
 # Top level modules:
 # 	control_unit_TB
-# End time: 18:29:00 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:28 on May 18,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:29:00 on May 15,2022
+# Start time: 16:11:28 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/four_bit_reg.v 
 # -- Compiling module four_bit_reg
 # 
 # Top level modules:
 # 	four_bit_reg
-# End time: 18:29:00 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:28 on May 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:29:00 on May 15,2022
+# Start time: 16:11:28 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v 
 # -- Compiling module next_state
 # 
 # Top level modules:
 # 	next_state
-# End time: 18:29:00 on May 15,2022, Elapsed time: 0:00:00
+# End time: 16:11:29 on May 18,2022, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project {C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 18:29:00 on May 15,2022
+# Start time: 16:11:29 on May 18,2022
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project" C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/sixteen_bit_reg.v 
 # -- Compiling module sixteen_bit_reg
 # 
 # Top level modules:
 # 	sixteen_bit_reg
-# End time: 18:29:01 on May 15,2022, Elapsed time: 0:00:01
+# End time: 16:11:29 on May 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  control_unit_TB
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" control_unit_TB 
-# Start time: 18:29:01 on May 15,2022
+# Start time: 16:11:30 on May 18,2022
 # ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v(19): (vopt-2685) [TFMPC] - Too few port connections for 'cu_inst'.  Expected 16, found 15.
+# ** Warning: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit_TB.v(19): (vopt-2718) [TFMPC] - Missing connection for port 'instr_ctrl'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
 # Loading work.control_unit_TB(fast)
 # Loading work.control_unit(fast)
 # Loading work.four_bit_reg(fast)
@@ -188,14 +195,14 @@
 # Loading work.control_output(fast)
 # Loading work.binary_to_reg_sig(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (4) for port 'next_state'. The port definition is at: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v(1).
-#    Time: 0 ps  Iteration: 0  Instance: /control_unit_TB/cu_inst/inst_next_state File: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v Line: 17
+#    Time: 0 ps  Iteration: 0  Instance: /control_unit_TB/cu_inst/inst_next_state File: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v Line: 24
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: thare  Hostname: DESKTOP-N0A84HG  ProcessID: 7252
-#           Attempting to use alternate WLF file "./wlftazej47".
+#           Attempting to use alternate WLF file "./wlftr9he3z".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftazej47
+#           Using alternate file: ./wlftr9he3z
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -204,7 +211,8 @@
 add wave -position end  sim:/control_unit_TB/cu_inst/curr_state
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt19
+# ** Note: (vsim-8009) Loading existing optimized design _opt23
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
 # Loading work.control_unit_TB(fast)
 # Loading work.control_unit(fast)
 # Loading work.four_bit_reg(fast)
@@ -212,5 +220,7 @@ restart
 # Loading work.control_output(fast)
 # Loading work.binary_to_reg_sig(fast)
 # ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (4) for port 'next_state'. The port definition is at: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/next_state.v(1).
-#    Time: 0 ps  Iteration: 0  Instance: /control_unit_TB/cu_inst/inst_next_state File: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v Line: 17
+#    Time: 0 ps  Iteration: 0  Instance: /control_unit_TB/cu_inst/inst_next_state File: C:/Users/thare/OneDrive/Documents/UNI/YR3/elec2602_group6/project/control_unit.v Line: 24
 run 1us
+# End time: 16:13:22 on May 18,2022, Elapsed time: 0:01:52
+# Errors: 0, Warnings: 3
