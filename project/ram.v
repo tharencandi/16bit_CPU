@@ -33,3 +33,4 @@ module ram
 	assign out = ram[addr_reg];
 	
 endmodule
+//DONT USE OLD
