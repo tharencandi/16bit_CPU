@@ -7,7 +7,7 @@ module buff (a,b,enable);
 		if (enable) 
 			b = a;
 		else 
-			b = 1'bz;
+			b = 16'bz;
 	
 	end
 endmodule

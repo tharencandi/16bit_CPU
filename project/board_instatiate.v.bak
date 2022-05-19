@@ -1,0 +1,6 @@
+module board_instatiate(SW, HEX0, HEX1, HEX2, HEX3, KEY0, KEY1);
+	input [6:0] HEX0, HEX1, HEX2, HEX3;
+	input SW[9:0];
+	input [1:0] KEY;
+	
+	datapath_

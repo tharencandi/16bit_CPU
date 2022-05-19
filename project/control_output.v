@@ -27,7 +27,9 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 	
 	always @(state) begin
 		case(state)
-		4'b0000: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b1; instr_enable = 1'b1; pc_enable = 1'b0; end 
+		4'b0000: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end // state 0 PC will update // goes to state 1111
+		4'b1111: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b1; instr_enable = 1'b1; pc_enable = 1'b0; end  // state 1111 the RAM output will update its output
+		4'b0001: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0;end // state 2 put new instruction in instruction register. 
 		//load (rx_in and ctrl_out)
 		4'b0010: begin ctrl_out = 1'b1; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end
 		

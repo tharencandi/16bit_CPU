@@ -92,7 +92,7 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	//display driver
 	seven_seg_controller display_driver
 	(
-		.sw(), .r1(r1_out), .r2(r2_out), .r3(r3_out), 
+		.sw(sw), .r1(r1_out), .r2(r2_out), .r3(r3_out), 
 		.r4(r4_out), .r5(r5_out), .r6(r6_out), .r7(r7_out),
 		.r8(r8_out), .displ(displays)
 	);

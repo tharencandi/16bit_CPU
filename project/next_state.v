@@ -10,8 +10,9 @@ module next_state(instr, state, next_state);
 	
 	always @(temp) begin
 		casez (temp)
-		8'bzzzz0000: begin next_state = 4'b0001; end // new instruction, go to s1
-		8'b00000001: begin next_state = 4'b0010; end //start load
+		8'bzzzz0000: begin next_state = 4'b1111; end // new instruction, go to s1
+		8'bzzzz1111: begin next_state = 4'b0001; end // load new instr
+		8'b00000001: begin next_state = 4'b0010; end //exec
 		8'b00010001: begin next_state = 4'b0011; end // start move
 		8'b00100001: begin next_state = 4'b1001; end // start add (add0)
 		8'b00110001: begin next_state = 4'b0110; end //start sub (sub0)
