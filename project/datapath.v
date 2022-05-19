@@ -1,4 +1,4 @@
-module datapath(clk, rst);
+module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	
 	/*
 		This cpu has:
@@ -16,8 +16,11 @@ module datapath(clk, rst);
 	
 	input clk, rst;
 	
+	input [2:0] sw;
+	output [6:0] seg0,seg1,seg2,seg3;
+	
 	wire [7:0] rin, rout;
-	wire wren, stack_ctrl, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
+	wire wren, stack_ctrl, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
 	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
 	wire [15:0] ra_in, acc_out;
 	reg [15:0] ram_address;
@@ -34,7 +37,7 @@ module datapath(clk, rst);
 
 	
 	
-	always@(stack_ctrl) begin
+	always@(stack_ctrl or r8_out or instr_address) begin
 		if (stack_ctrl == 1'b1)
 			ram_address <= r8_out;
 		else 
@@ -43,7 +46,8 @@ module datapath(clk, rst);
 		
 			
 	// RAM
-	RAM_Port1 (.address(ram_address), .clock(clk), .data(bus), .wren(wren), .q(ram_out));
+	assign wren = 1'b0;
+	RAM_Port1 ram(.address(ram_address), .clock(clk), .data(bus), .wren(wren), .q(ram_out));
 	buff ram_out_buff(.a(ram_out),.b(bus),.enable(ram_out_ctrl));
 	
 	
@@ -51,10 +55,11 @@ module datapath(clk, rst);
 	control_unit control_unit_inst
 	(	
 		.clk(clk), .rst(rst), .instr(instr), .rin(rin), 
-		.rout(rout), .gin(acc_enable), .gout(acc_out_ctrl), .pcin(pc_enable), 
+		.rout(rout), .gin(acc_enable), .gout(acc_out_ctrl), .pcin(pcin), 
 		.pcout(pc_out_ctrl), .addsub(addsub), .a_in(a_enable), 
 		.xorctrl(xor_ctrl), .ctrl_out(cu_out_ctrl), 
-		.out(cu_out), .new_instr(),.instr_ctrl(instr_ctrl)	
+		.out(cu_out),.ram_addr_sel(stack_ctrl), .ram_out_ctrl(ram_out_ctrl), 
+		.instr_enable(instr_ctrl),.pc_enable(pc_enable)
 	);
 	
 	buff ctrl_unit_out_buff(.a(cu_out),.b(bus),.enable(cu_out_ctrl));
@@ -77,6 +82,20 @@ module datapath(clk, rst);
 		end
 	endgenerate
 	*/
+	
+	wire [27:0] displays;
+	assign seg0 = displays[6:0];
+	assign seg1 = displays[13:7];
+	assign seg2 = displays[20:14];
+	assign seg3 = displays[27:21];
+	
+	//display driver
+	seven_seg_controller display_driver
+	(
+		.sw(), .r1(r1_out), .r2(r2_out), .r3(r3_out), 
+		.r4(r4_out), .r5(r5_out), .r6(r6_out), .r7(r7_out),
+		.r8(r8_out), .displ(displays)
+	);
 	
 	// reg and tri-state-buffers
 	sixteen_bit_reg r1(.D(bus), .clk(clk), .rst(rst), .Q(r1_out),.enable(rin[0]));

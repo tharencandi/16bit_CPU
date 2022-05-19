@@ -1,8 +1,8 @@
-module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a_in, xorctrl, ctrl_out);
+module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a_in, xorctrl, ctrl_out, ram_addr_sel, ram_out_ctrl, instr_enable, pc_enable);
 	input [3:0] state;
 	input [15:0] instr;
 	output [7:0] rin, rout;
-	output reg gin, gout, pcin, pcout, addsub, a_in, xorctrl, ctrl_out;
+	output reg gin, gout, pcin, pcout, addsub, a_in, xorctrl, ctrl_out, ram_addr_sel, ram_out_ctrl, instr_enable, pc_enable;
 
 	reg rx_in,rx_out, ry_in, ry_out;
 	wire [7:0] rx_in_data, rx_out_data, ry_in_data, ry_out_data;
@@ -27,55 +27,55 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 	
 	always @(state) begin
 		case(state)
-		
+		4'b0000: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b1; instr_enable = 1'b1; pc_enable = 1'b0; end 
 		//load (rx_in and ctrl_out)
-		4'b0010: begin ctrl_out = 1'b1; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b0010: begin ctrl_out = 1'b1; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end
 		
 		//move (rx_in and ry_out)
-		4'b0011: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b0011: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end
 		
 		//ldpc (pc_out and rx_in)
-		4'b0100: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b1; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b0100: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b1; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end
 		
 		//branch (pc_in, rx_out)
-		4'b0101: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b1; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b0101: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b1; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end
 		
 		
 		//SUB
 		
 		//sub 0 (rx_out, a_in)
-		4'b0110: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b1; xorctrl = 1'b0; end
+		4'b0110: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b1; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end
 		
 		//sub 1 (ry_out, addsub, g_in)
-		4'b0111: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b1; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b0111: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b1; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end
 		
 		//sub 2 (g_out, rx_in)
-		4'b1000: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b1000: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end
 		
 		//ADD
 		
 		//add 0 (rx_out, a_in)
-		4'b1001: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b1; xorctrl = 1'b0; end
+		4'b1001: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b1; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end
 		
 		//add 1 (ry_out, g_in)
-		4'b1010: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		4'b1010: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end
 		
 		//add 2 (g_out, rx_in)
-		4'b1011: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end 
+		4'b1011: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end 
 		
 		
 		//XOR
 		//add 0 (rx_out, a_in)
-		4'b1100: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b1; xorctrl = 1'b0; end
+		4'b1100: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b1; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b1; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end
 		
 		//add 1 (ry_out, g_in, xor_ctrl)
-		4'b1101: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b1; end
+		4'b1101: begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b1; gin = 1'b1; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b1; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end
 		
 		//add 2 (g_out, rx_in)
-		4'b1110: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end 
+		4'b1110: begin ctrl_out = 1'b0; rx_in = 1'b1; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b1; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; end 
 		
 		
-		default  : begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; end
+		default  : begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; end
 	endcase
 	end
 	wire [3:0] rx, ry;

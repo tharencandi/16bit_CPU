@@ -13,9 +13,9 @@ module alu(clk, rst, a, b, addsub, xor_ctrl, out, acc_enable, a_enable);
 	// multiplex for b
 	always @(b or addsub) begin
 		if (addsub == 1'b1)
-			assign b_mux = ~b;
+			b_mux = ~b;
 		else 
-			assign b_mux = b;
+			b_mux = b;
 	end
 	 
 	

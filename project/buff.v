@@ -1,14 +1,13 @@
 module buff (a,b,enable);
-	input a;
-	output reg b;
+	input [15:0] a;
 	input enable;
+	output reg [15:0] b;
 	always @ (enable or a) begin
 	
-		if (enable) begin
+		if (enable) 
 			b = a;
-		end 
-		else begin
-			b =1'bz;
-		end
+		else 
+			b = 1'bz;
+	
 	end
 endmodule
