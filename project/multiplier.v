@@ -1,8 +1,7 @@
-module multiplier(enable, a, b, m,n);
+module multiplier(enable, a, b, m, n);
 
-input clk, rst, enable
 input [15:0] a, b; 
-output [15:0] m, 2;
+output [15:0] m, n;
 
 wire [15:0] m0;
 wire [16:0] m1;
