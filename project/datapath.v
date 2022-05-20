@@ -20,8 +20,8 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	output [6:0] seg0,seg1,seg2,seg3;
 	
 	wire [7:0] rin, rout;
-	wire wren, stack_ctrl, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl;
-	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out;
+	wire wren, stack_ctrl, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl, mul_out_ctrl, mul_acc_out_ctrl;
+	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, mul_acc_out;
 	wire [15:0] ra_in, acc_out;
 	reg [15:0] ram_address;
 	wire [15:0] ram_out;
@@ -69,10 +69,11 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	alu alu_inst(
 		.clk(clk), .rst(rst), .a(bus),.a_enable(a_enable), 
 		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .out(acc_out), .acc_enable(acc_enable)
+		,.mul_acc_out(), .mul_out_ctrl()
 		);
 		
 	buff accumulator_buff(.a(acc_out),.b(bus),.enable(acc_out_ctrl));
-	
+	buff mul_accumulator_buff(.a(mul_acc_out),.b(bus),.enable(mul_acc_out_ctrl));
 	
 	/*
 	genvar i;

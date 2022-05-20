@@ -16,7 +16,7 @@ module control_unit
 	//instr: f2f1f0rx2rx1fx0 (ry2ry1ry0 0000000000| D7D6D5D4D3D2D1D0 00) 
 	assign out = {8'b0,instr[7:0]};
 	
-	wire [3:0] curr_state, next_state;
+	wire [4:0] curr_state, next_state;
 	
 	
 	four_bit_reg state_reg(.D(next_state),.clk(clk),.rst(rst),.Q(curr_state));

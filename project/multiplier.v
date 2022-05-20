@@ -1,7 +1,7 @@
-module multiplier(enable, a, b, m, n);
+module multiplier(a, b, l_m, r_m);
 
 input [15:0] a, b; 
-output [15:0] m, n;
+output [15:0] l_m, r_m;
 
 wire [15:0] m0;
 wire [16:0] m1;
@@ -55,8 +55,8 @@ assign s13 = s12 + (m13<<13);
 assign s14 = s13 + (m14<<14);
 assign s15 = s14 + (m15<<15);
 
-assign m = s15[15:0];
-assign n = s15[31:16];
+assign l_m = s15[15:0];
+assign r_m = s15[31:16];
 
 endmodule
 
