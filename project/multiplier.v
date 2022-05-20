@@ -1,4 +1,4 @@
-module multiplier(clk, rst, enable, a, b, m,n);
+module multiplier(enable, a, b, m,n);
 
 input clk, rst, enable
 input [15:0] a, b; 
