@@ -22,22 +22,22 @@ wire [30:0] m15;
 
 wire [31:0] s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15;
 
-assign m0 = {16{a[0]}} & b[15:0];
-assign m1 = {16{a[1]}} & b[15:0];
-assign m2 = {16{a[2]}} & b[15:0];
-assign m3 = {16{a[3]}} & b[15:0];
-assign m4 = {16{a[4]}} & b[15:0];
-assign m5 = {16{a[5]}} & b[15:0];
-assign m6 = {16{a[6]}} & b[15:0];
-assign m7 = {16{a[7]}} & b[15:0];
-assign m8 = {16{a[8]}} & b[15:0];
-assign m9 = {16{a[9]}} & b[15:0];
-assign m10 = {16{a[10]}} & b[15:0];
-assign m11 = {16{a[11]}} & b[15:0];
-assign m12 = {16{a[12]}} & b[15:0];
-assign m13 = {16{a[13]}} & b[15:0];
-assign m14 = {16{a[14}} & b[15:0];
-assign m15 = {16{a[15]}} & b[15:0];
+assign m0 = {a[0] & b[15:0]};
+assign m1 = {a[1] & b[15:0]};
+assign m2 = {a[2] & b[15:0]};
+assign m3 = {a[3] & b[15:0]};
+assign m4 = {a[4] & b[15:0]};
+assign m5 = {a[5] & b[15:0]};
+assign m6 = {a[6] & b[15:0]};
+assign m7 = {a[7] & b[15:0]};
+assign m8 = {a[8] & b[15:0]};
+assign m9 = {a[9] & b[15:0]};
+assign m10 = {a[10] & b[15:0]};
+assign m11 = {a[11] & b[15:0]};
+assign m12 = {a[12] & b[15:0]};
+assign m13 = {a[13] & b[15:0]};
+assign m14 = {a[14] & b[15:0]};
+assign m15 = {a[15] & b[15:0]};
 
 assign s1 = m0 + (m1<<1);
 assign s2 = s1 + (m2<<2);

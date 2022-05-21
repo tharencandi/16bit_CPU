@@ -68,8 +68,8 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	// alu outputs accumulator register which needs to be dealt with by a tristate buffer
 	alu alu_inst(
 		.clk(clk), .rst(rst), .a(bus),.a_enable(a_enable), 
-		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .out(acc_out), .acc_enable(acc_enable)
-		,.mul_acc_out(), .mul_out_ctrl()
+		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .acc_out(acc_out), .acc_enable(acc_enable)
+		,.mul_acc_out(mul_acc_out), .mul_out_ctrl(mul_out_ctrl)
 		);
 		
 	buff accumulator_buff(.a(acc_out),.b(bus),.enable(acc_out_ctrl));

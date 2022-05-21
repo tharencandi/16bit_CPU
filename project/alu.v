@@ -4,8 +4,8 @@ module alu(clk, rst, a, b, addsub, xor_ctrl, acc_out, acc_enable, a_enable, mul_
 	input clk, rst, addsub, xor_ctrl, acc_enable, a_enable, mul_out_ctrl;
 	
 	input[15:0] a,b;
-	output[15:0] out;
-	output[15:0] mul_acc_out;
+	output[15:0] acc_out,mul_acc_out;
+	
 	
 	wire [15:0] add_out, xor_out, acc_in, a_reg, l_m_out, r_m_out;
 	reg [15:0] b_mux;
@@ -25,7 +25,7 @@ module alu(clk, rst, a, b, addsub, xor_ctrl, acc_out, acc_enable, a_enable, mul_
 	
 	sixteenBit_FA adder_circuit(.a(a_reg),.b(b_mux),.cin(addsub),.cout(),.s(add_out));
 	sixteen_bit_xor xor_circuit(.a(a_reg),.b(b),.out(xor_out));
-	sixteen_bit_multiplier multiplier(.a(a_reg), .b(b), .l_m(l_m_out), .r_m(r_m_out))
+	multiplier multiplier_circuit(.a(a_reg), .b(b), .l_m(l_m_out), .r_m(r_m_out));
 	
 	
 	
@@ -33,6 +33,6 @@ module alu(clk, rst, a, b, addsub, xor_ctrl, acc_out, acc_enable, a_enable, mul_
 	buff xor_buffer(.a(xor_out),.b(acc_in),.enable(xor_ctrl));
 	buff mul_buffer(.a(l_m_out), .b(acc_in), .enable(mul_out_ctrl));
 
-	sixteen_bit_reg accumulator(.D(acc_in), .clk(clk), .rst(rst), .Q(out), .enable(acc_enable));
+	sixteen_bit_reg accumulator(.D(acc_in), .clk(clk), .rst(rst), .Q(acc_out), .enable(acc_enable));
 	sixteen_bit_reg mul_accumulator(.D(r_m_out), .clk(clk), .rst(rst), .Q(mul_acc_out), .enable(acc_enable));
 endmodule

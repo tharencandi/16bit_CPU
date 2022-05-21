@@ -11,7 +11,7 @@ output[27:0] displ; // -> 'm'
 
 //disp needs to be in 4 parts for 4 hexs -> 16b number 4 hex displ ->7b out each
 
-always @(sw or r1 or r2 or r3 or r4 or r5 or r6 or r6 or r8) begin
+always @(sw or r1 or r2 or r3 or r4 or r5 or r6 or r7 or r8) begin
 	case (sw)
 	3'b000 : begin val = r1; end
 	3'b001 : begin val = r2; end

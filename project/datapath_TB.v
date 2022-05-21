@@ -11,6 +11,7 @@ module datapath_TB;
 	initial begin 
 		count = 8'b0;
 		clk = 1'b0;
+		rst = 1'b1; sw = 3'b0;
 	end
 	
 	always begin
@@ -23,8 +24,6 @@ module datapath_TB;
   
   always@ (count) begin
   case(count) 
-  8'b0: begin rst = 1'b1; sw = 3'b0; end   // resetting
-  8'b1: begin rst = 1'b1; sw = 3'b0; end 
   default: begin rst = 1'b0; sw = 3'b0;  end  // should hold previous value 
   endcase
   end
