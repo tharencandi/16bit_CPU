@@ -19,13 +19,13 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	input [2:0] sw;
 	output [6:0] seg0,seg1,seg2,seg3;
 	
-	wire [7:0] rin, rout;
-	wire wren, stack_ctrl, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl, mul_out_ctrl, mul_acc_out_ctrl;
-	wire[15:0] instr, bus, instr_address, cu_out, r1_out, r2_out,r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, mul_acc_out;
+	wire [15:0] rin, rout;
+	wire wr_enable, ram_addr_sel, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl, mul_out_ctrl, mul_acc_out_ctrl;
+	wire[15:0] instr, bus, instr_address, cu_out, r0_out, r1_out,r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out,r10_out, r11_out, r12_out, r13_out, mul_acc_out, sp_out;
 	wire [15:0] ra_in, acc_out;
 	reg [15:0] ram_address;
 	wire [15:0] ram_out;
-	
+	wire[1:0] sp_sel;
 	//instruction register takes input from bus and outputs the next instruction which will be input to control unit
 	sixteen_bit_reg instruction_register(.clk(clk),.rst(rst),.D(bus),.Q(instr),.enable(instr_ctrl));
 	
@@ -37,17 +37,17 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 
 	
 	
-	always@(stack_ctrl or r8_out or instr_address) begin
-		if (stack_ctrl == 1'b1)
-			ram_address <= r8_out;
+	always@(ram_addr_sel or sp_out or instr_address) begin
+		if (ram_addr_sel == 1'b1)
+			ram_address <= sp_out;
 		else 
 			ram_address <= instr_address;
 	end
 		
 			
 	// RAM
-	assign wren = 1'b0;
-	RAM_Port1 ram(.address(ram_address), .clock(clk), .data(bus), .wren(wren), .q(ram_out));
+
+	RAM_Port1 ram(.address(ram_address), .clock(clk), .data(bus), .wren(wr_enable), .q(ram_out));
 	buff ram_out_buff(.a(ram_out),.b(bus),.enable(ram_out_ctrl));
 	
 	
@@ -58,8 +58,8 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 		.rout(rout), .gin(acc_enable), .gout(acc_out_ctrl), .pcin(pcin), 
 		.pcout(pc_out_ctrl), .addsub(addsub), .a_in(a_enable), 
 		.xorctrl(xor_ctrl), .ctrl_out(cu_out_ctrl), 
-		.out(cu_out),.ram_addr_sel(stack_ctrl), .ram_out_ctrl(ram_out_ctrl), 
-		.instr_enable(instr_ctrl),.pc_enable(pc_enable)
+		.out(cu_out),.ram_addr_sel(ram_addr_sel), .ram_out_ctrl(ram_out_ctrl), 
+		.instr_enable(instr_ctrl),.pc_enable(pc_enable), .wr_enable(wr_enable), .sp_sel(sp_sel)
 	);
 	
 	buff ctrl_unit_out_buff(.a(cu_out),.b(bus),.enable(cu_out_ctrl));
@@ -99,22 +99,43 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	);
 	
 	// reg and tri-state-buffers
-	sixteen_bit_reg r1(.D(bus), .clk(clk), .rst(rst), .Q(r1_out),.enable(rin[0]));
-	sixteen_bit_reg r2(.D(bus), .clk(clk), .rst(rst), .Q(r2_out),.enable(rin[1]));
-	sixteen_bit_reg r3(.D(bus), .clk(clk), .rst(rst), .Q(r3_out),.enable(rin[2]));
-	sixteen_bit_reg r4(.D(bus), .clk(clk), .rst(rst), .Q(r4_out),.enable(rin[3]));
-	sixteen_bit_reg r5(.D(bus), .clk(clk), .rst(rst), .Q(r5_out),.enable(rin[4]));
-	sixteen_bit_reg r6(.D(bus), .clk(clk), .rst(rst), .Q(r6_out),.enable(rin[5]));
-	sixteen_bit_reg r7(.D(bus), .clk(clk), .rst(rst), .Q(r7_out),.enable(rin[6]));
-	sixteen_bit_reg r8(.D(bus), .clk(clk), .rst(rst), .Q(r8_out),.enable(rin[7]));
 	
-	buff r1_out_b(.a(r1_out),.b(bus),.enable(rout[0]));
-	buff r2_out_b(.a(r2_out),.b(bus),.enable(rout[1]));
-	buff r3_out_b(.a(r3_out),.b(bus),.enable(rout[2]));
-	buff r4_out_b(.a(r4_out),.b(bus),.enable(rout[3]));
-	buff r5_out_b(.a(r5_out),.b(bus),.enable(rout[4]));
-	buff r6_out_b(.a(r6_out),.b(bus),.enable(rout[5]));
-	buff r7_out_b(.a(r6_out),.b(bus),.enable(rout[6]));
-	buff r8_out_b(.a(r8_out),.b(bus),.enable(rout[7]));
+	stack_pointer sp(.in(bus), .out(sp_out), .sel(sp_sel), .enable(rin[15]), .clk(clk), .rst(rst));
+	buff sp_out_b(.a(sp_out),.b(bus),.enable(rout[15]));
+	
+	
+	sixteen_bit_reg r0(.D(bus), .clk(clk), .rst(rst), .Q(r0_out),.enable(rin[0]));
+	sixteen_bit_reg r1(.D(bus), .clk(clk), .rst(rst), .Q(r1_out),.enable(rin[1]));
+	sixteen_bit_reg r2(.D(bus), .clk(clk), .rst(rst), .Q(r2_out),.enable(rin[2]));
+	sixteen_bit_reg r3(.D(bus), .clk(clk), .rst(rst), .Q(r3_out),.enable(rin[3]));
+	sixteen_bit_reg r4(.D(bus), .clk(clk), .rst(rst), .Q(r4_out),.enable(rin[4]));
+	sixteen_bit_reg r5(.D(bus), .clk(clk), .rst(rst), .Q(r5_out),.enable(rin[5]));
+	sixteen_bit_reg r6(.D(bus), .clk(clk), .rst(rst), .Q(r6_out),.enable(rin[6]));
+	sixteen_bit_reg r7(.D(bus), .clk(clk), .rst(rst), .Q(r7_out),.enable(rin[7]));
+	
+	sixteen_bit_reg r8(.D(bus), .clk(clk), .rst(rst), .Q(r8_out),.enable(rin[8]));
+	sixteen_bit_reg r9(.D(bus), .clk(clk), .rst(rst), .Q(r9_out),.enable(rin[9]));
+	sixteen_bit_reg r10(.D(bus), .clk(clk), .rst(rst), .Q(r10_out),.enable(rin[10]));
+	sixteen_bit_reg r11(.D(bus), .clk(clk), .rst(rst), .Q(r11_out),.enable(rin[11]));
+	sixteen_bit_reg r12(.D(bus), .clk(clk), .rst(rst), .Q(r12_out),.enable(rin[12]));
+	sixteen_bit_reg r13(.D(bus), .clk(clk), .rst(rst), .Q(r13_out),.enable(rin[13]));
+	
+
+	
+	buff r0_out_b(.a(r0_out),.b(bus),.enable(rout[0]));
+	buff r1_out_b(.a(r1_out),.b(bus),.enable(rout[1]));
+	buff r2_out_b(.a(r2_out),.b(bus),.enable(rout[2]));
+	buff r3_out_b(.a(r3_out),.b(bus),.enable(rout[3]));
+	buff r4_out_b(.a(r4_out),.b(bus),.enable(rout[4]));
+	buff r5_out_b(.a(r5_out),.b(bus),.enable(rout[5]));
+	buff r6_out_b(.a(r6_out),.b(bus),.enable(rout[6]));
+	buff r7_out_b(.a(r7_out),.b(bus),.enable(rout[7]));
+	
+	buff r8_out_b(.a(r8_out),.b(bus),.enable(rout[8]));
+	buff r9_out_b(.a(r9_out),.b(bus),.enable(rout[9]));
+	buff r10_out_b(.a(r10_out),.b(bus),.enable(rout[10]));
+	buff r11_out_b(.a(r11_out),.b(bus),.enable(rout[11]));
+	buff r12_out_b(.a(r12_out),.b(bus),.enable(rout[12]));
+	buff r13_out_b(.a(r13_out),.b(bus),.enable(rout[13]));
 	
 endmodule
