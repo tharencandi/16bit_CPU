@@ -1,70 +1,92 @@
-module next_state(instr, state, next_state);
+module next_state(instr, state, next_state, status_reg);
 	
 	input [15:0] instr;
 	input [7:0] state;
 	output reg [7:0] next_state;
+	input[3:0] status_reg;
 	
 	
 	wire[11:0] temp;
-	assign temp = {instr[15:12], state};
+	assign temp = {status_reg[3:1], instr[15:12], state};
 	
 	always @(temp) begin
 		casez (temp)
-		12'bzzzz00000000: begin next_state = 8'b1111; end // new instruction, go to s1
-		12'bzzzz00001111: begin next_state = 8'b0001; end // load new instr
-		12'b000000000001: begin next_state = 8'b0010; end //exec
-		12'b000100000001: begin next_state = 8'b0011; end // start move
-		12'b001000000001: begin next_state = 8'b1001; end // start add (add0)
-		12'b001100000001: begin next_state = 8'b0110; end //start sub (sub0)
-		12'b010000000001: begin next_state = 8'b1100; end // start xor
-		12'b010100000001: begin next_state = 8'b0100; end // start ldpc
-		12'b011000000001: begin next_state = 8'b0101; end // start branch
-		12'b100000000001: begin next_state = 8'b10011; end // start push
-		12'b100100000001: begin next_state = 8'b10111; end //start pop
-		12'b101000000001: begin next_state = 8'b11011; end // start CALL
-		12'b101100000001: begin next_state = 8'b100001; end // start ret
+		15'bzzzzzzz00000000: begin next_state = 8'b1111; end // new instruction, go to s1
+		15'bzzzzzzz00001111: begin next_state = 8'b0001; end // load new instr
+		15'bzzz000000000001: begin next_state = 8'b0010; end //exec
+		15'bzzz000100000001: begin next_state = 8'b0011; end // start move
+		15'bzzz001000000001: begin next_state = 8'b1001; end // start add (add0)
+		15'bzzz001100000001: begin next_state = 8'b0110; end //start sub (sub0)
+		15'bzzz010000000001: begin next_state = 8'b1100; end // start xor
+		15'bzzz010100000001: begin next_state = 8'b0100; end // start ldpc
+		15'bzzz011000000001: begin next_state = 8'b0101; end // start branch
+		15'bzzz100000000001: begin next_state = 8'b10011; end // start push
+		15'bzzz100100000001: begin next_state = 8'b10111; end //start pop
+		15'bzzz101000000001: begin next_state = 8'b11011; end // start CALL
+		15'bzzz101100000001: begin next_state = 8'b100001; end // start ret
+
+		15'bzzz110000000001: begin next_state = 8'b00100110; end //start CPU
+		15'bzzz110100000001: begin next_state = 8'b00101001; end //start BREQ
+
 		
-		// ones that just go back to s01 (load,mov,add2,sub2,xor2, ldpc, branch)
-		12'bzzzz00000010: begin next_state = 8'b0000; end //load
-		12'bzzzz00000011: begin next_state = 8'b0000; end //mov
-		12'bzzzz00001011: begin next_state = 8'b0000; end //add2
-		12'bzzzz00001000: begin next_state = 8'b0000; end //sub2
- 		12'bzzzz00001110: begin next_state = 8'b0000; end //xor2
-		12'bzzzz00000100: begin next_state = 8'b0000; end //ldpc
-		12'bzzzz00000101: begin next_state = 8'b0000; end //branch
+		// ones that just go back to s01 (load,mov,add2,sub2,xor2, ldpc, branch) --> is this supposed to be s0??
+		15'bzzzzzzz00000010: begin next_state = 8'b0000; end //load
+		15'bzzzzzzz00000011: begin next_state = 8'b0000; end //mov
+		15'bzzzzzzz00001011: begin next_state = 8'b0000; end //add2
+		15'bzzzzzzz00001000: begin next_state = 8'b0000; end //sub2
+ 		15'bzzzzzzz00001110: begin next_state = 8'b0000; end //xor2
+		15'bzzzzzzz00000100: begin next_state = 8'b0000; end //ldpc
+		15'bzzzzzzz00000101: begin next_state = 8'b0000; end //branch
+
+		15'bzzzzzzz00101000: begin next_state = 8'b0000; end //cpu2
+		15'bzzz110100101010: begin next_state = 8'b0000; end //breq2
+
 		
 		// add 0 - add 1 - add 2
-		12'bzzzz00001001: begin next_state = 8'b1010; end
-		12'bzzzz00001010: begin next_state = 8'b1011; end
+		15'bzzzzzzz00001001: begin next_state = 8'b1010; end
+		15'bzzzzzzz00001010: begin next_state = 8'b1011; end
 	
 		// sub 0 - sub 1 - sub 2
-		12'bzzzz00000110: begin next_state = 8'b0111; end
-		12'bzzzz00000111: begin next_state = 8'b1000; end
+		15'bzzzzzzz00000110: begin next_state = 8'b0111; end
+		15'bzzzzzzz00000111: begin next_state = 8'b1000; end
 		// xor 0 - xor 1 - xor 2
-		12'bzzzz00001100: begin next_state = 8'b1101; end
-		12'bzzzz00001101: begin next_state = 8'b1110; end
+		15'bzzzzzzz00001100: begin next_state = 8'b1101; end
+		15'bzzzzzzz00001101: begin next_state = 8'b1110; end
 		
 		// pushes
-		12'bzzzz00010011: begin next_state = 8'b10100; end 
-		12'bzzzz00010100: begin next_state = 8'b10101; end
-		12'bzzzz00010101: begin next_state = 8'b10110; end
+		15'bzzzzzzz00010011: begin next_state = 8'b10100; end 
+		15'bzzzzzzz00010100: begin next_state = 8'b10101; end
+		15'bzzzzzzz00010101: begin next_state = 8'b10110; end
 		
 		// pops
-		12'bzzzz00010111: begin next_state = 8'b00011000; end
-		12'bzzzz00011000: begin next_state = 8'b00011001; end
-		12'bzzzz00011001: begin next_state = 8'b00011010; end
+		15'bzzzzzzz00010111: begin next_state = 8'b00011000; end
+		15'bzzzzzzz00011000: begin next_state = 8'b00011001; end
+		15'bzzzzzzz00011001: begin next_state = 8'b00011010; end
 		
 		//calls
-		12'bzzzz00011011: begin next_state = 8'b00011100; end
-		12'bzzzz00011100: begin next_state = 8'b00011101; end
-		12'bzzzz00011101: begin next_state = 8'b00011110; end
-		12'bzzzz00011110: begin next_state = 8'b00011111; end
-		12'bzzzz00011111: begin next_state = 8'b00100000; end
+		15'bzzzzzzz00011011: begin next_state = 8'b00011100; end
+		15'bzzzzzzz00011100: begin next_state = 8'b00011101; end
+		15'bzzzzzzz00011101: begin next_state = 8'b00011110; end
+		15'bzzzzzzz00011110: begin next_state = 8'b00011111; end
+		15'bzzzzzzz00011111: begin next_state = 8'b00100000; end
 		
 		//rets
-		12'bzzzz00100001: begin next_state = 8'b00100010; end
-		12'bzzzz00100010: begin next_state = 8'b00100011; end
-		12'bzzzz00100011: begin next_state = 8'b00100100; end
+		15'bzzzzzzz00100001: begin next_state = 8'b00100010; end
+		15'bzzzzzzz00100010: begin next_state = 8'b00100011; end
+		15'bzzzzzzz00100011: begin next_state = 8'b00100100; end
+
+		//CPU 0 - CPU 1 - CPU 2
+		15'bzzzzzzz00100110: begin next_state = 8'b00100111; end
+		15'bzzzzzzz00100111: begin next_state = 8'b00101000; end
+
+		//breq1 -> breq2 if Z=1 -> breq4 -> breq3
+		15'bzz1110100101001: begin next_state = 8'b00101010; end 
+		15'bzzz110100101010: begin next_state = 8'b00101100; end
+		15'bzzz110100101100: begin next_state = 8'b00101011; end
+		//breq1 -> breq3 if z=0
+		15'bzz0110100101001: begin next_state = 8'b00101011; end
+		
+
 	
 		
 		default : begin next_state = 8'b0; end
