@@ -82,7 +82,7 @@ for line in text:
     if ":" in line:
         sub = line[:-1]
         subroutines[sub] = i
-    elif "call" in line:
+    elif ["call", "breq", "brlo", "brhi"] in line:
         i += 2
         parsed_text.append(line.split())
     else:
