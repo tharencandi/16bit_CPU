@@ -60,6 +60,7 @@ module next_state(instr, state, next_state);
 		12'bzzzz00011101: begin next_state = 8'b00011110; end
 		12'bzzzz00011110: begin next_state = 8'b00011111; end
 		12'bzzzz00011111: begin next_state = 8'b00100000; end
+		12'bzzzz00100000: begin next_state = 8'b1001010; end
 		
 		//rets
 		12'bzzzz00100001: begin next_state = 8'b00100010; end
