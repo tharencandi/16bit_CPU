@@ -29,7 +29,7 @@ module next_state(instr, state, next_state, status_reg);
 		15'bzzz110100000001: begin next_state = 8'b00101001; end //start BREQ
 
 		
-		// ones that just go back to s01 (load,mov,add2,sub2,xor2, ldpc, branch) --> is this supposed to be s0??
+		// ones that just go back to s0 (load,mov,add2,sub2,xor2, ldpc, branch) --> is this supposed to be s0??
 		15'bzzzzzzz00000010: begin next_state = 8'b0000; end //load
 		15'bzzzzzzz00000011: begin next_state = 8'b0000; end //mov
 		15'bzzzzzzz00001011: begin next_state = 8'b0000; end //add2
@@ -38,8 +38,8 @@ module next_state(instr, state, next_state, status_reg);
 		15'bzzzzzzz00000100: begin next_state = 8'b0000; end //ldpc
 		15'bzzzzzzz00000101: begin next_state = 8'b0000; end //branch
 
-		15'bzzzzzzz00101000: begin next_state = 8'b0000; end //cpu2
-		15'bzzz110100101010: begin next_state = 8'b0000; end //breq2
+		15'bzzzzzzz00100111: begin next_state = 8'b0000; end //cpu1
+		15'bzzzzzzz00101011: begin next_state = 8'b0000; end //breq3
 
 		
 		// add 0 - add 1 - add 2
@@ -75,16 +75,16 @@ module next_state(instr, state, next_state, status_reg);
 		15'bzzzzzzz00100010: begin next_state = 8'b00100011; end
 		15'bzzzzzzz00100011: begin next_state = 8'b00100100; end
 
-		//CPU 0 - CPU 1 - CPU 2
+		//CPU 0 - CPU 1
 		15'bzzzzzzz00100110: begin next_state = 8'b00100111; end
-		15'bzzzzzzz00100111: begin next_state = 8'b00101000; end
+		
 
 		//breq1 -> breq2 if Z=1 -> breq4 -> breq3
-		15'bzz1110100101001: begin next_state = 8'b00101010; end 
-		15'bzzz110100101010: begin next_state = 8'b00101100; end
-		15'bzzz110100101100: begin next_state = 8'b00101011; end
+		15'bzz1zzz00101001: begin next_state = 8'b00101010; end 
+		15'bzzzzzz00101010: begin next_state = 8'b00101100; end
+		15'bzzzzzz00101100: begin next_state = 8'b00101011; end
 		//breq1 -> breq3 if z=0
-		15'bzz0110100101001: begin next_state = 8'b00101011; end
+		15'bzz0zzz00101001: begin next_state = 8'b00101011; end
 		
 
 	
