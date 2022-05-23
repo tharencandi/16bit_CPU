@@ -11,11 +11,18 @@ module control_unit
 	input [15:0]instr;
 	output [15:0] rin, rout;
 	output gin, gout, pcin, pcout, addsub, a_in, xorctrl , ctrl_out, ram_addr_sel, ram_out_ctrl, instr_enable, pc_enable, wr_enable;
-	output [15:0] out;
+	output reg [15:0] out;
 	output [1:0] sp_sel;
+	wire d_select;
 	
 	//instr: f2f1f0rx2rx1fx0 (ry2ry1ry0 0000000000| D7D6D5D4D3D2D1D0 00) 
-	assign out = {8'b0,instr[7:0]};
+	always @(d_select or instr) begin
+		if (d_select == 1'b0)
+			out = {8'b0,instr[7:0]};
+		else 
+			out = instr;
+	end
+	
 	
 	wire [7:0] curr_state, next_state;
 	
@@ -26,7 +33,9 @@ module control_unit
 	
 	control_output get_outputs(.state(curr_state),.instr(instr),.rin(rin), .rout(rout), .gin(gin), .gout(gout)
 		, .pcin(pcin), .pcout(pcout), .addsub(addsub),.a_in(a_in), .xorctrl(xorctrl) , .ctrl_out(ctrl_out),
-		.ram_addr_sel(ram_addr_sel), .ram_out_ctrl(ram_out_ctrl), .instr_enable(instr_enable), .pc_enable(pc_enable),.wr_enable(wr_enable), .sp_sel(sp_sel)
+		.ram_addr_sel(ram_addr_sel), .ram_out_ctrl(ram_out_ctrl), .instr_enable(instr_enable), .pc_enable(pc_enable),
+		.wr_enable(wr_enable), .sp_sel(sp_sel),
+		.d_select(d_select)
 		);
 		
 endmodule
