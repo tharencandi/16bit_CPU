@@ -27,6 +27,8 @@ module next_state(instr, state, next_state, status_reg);
 
 		15'bzzz110000000001: begin next_state = 8'b00100110; end //start CPU
 		15'bzzz110100000001: begin next_state = 8'b00101001; end //start BREQ
+		15'bzzz111000000001: begin next_state = 8'b00101101; end //start BRLO
+		15'bzzz111100000001: begin next_state = 8'b00110001; end //start BRHI
 
 		
 		// ones that just go back to s0 (load,mov,add2,sub2,xor2, ldpc, branch) --> is this supposed to be s0??
@@ -40,6 +42,8 @@ module next_state(instr, state, next_state, status_reg);
 
 		15'bzzzzzzz00100111: begin next_state = 8'b0000; end //cpu1
 		15'bzzzzzzz00101011: begin next_state = 8'b0000; end //breq3
+		15'bzzzzzzz00101111: begin next_state = 8'b0000; end //brlo3
+		15'bzzzzzzz00110011: begin next_state = 8'b0000; end //brhi3
 
 		
 		// add 0 - add 1 - add 2
@@ -86,9 +90,21 @@ module next_state(instr, state, next_state, status_reg);
 		15'bzzzzzz00101100: begin next_state = 8'b00101011; end
 		//breq1 -> breq3 if z=0
 		15'bzz0zzz00101001: begin next_state = 8'b00101011; end
-		
 
-	
+
+		//brlo1 -> brlo2 if N=1 -> brlo4 -> brlo3
+		15'b1zzzzz00101101: begin next_state = 8'b00101110; end 
+		15'bzzzzzz00101110: begin next_state = 8'b00110000; end
+		15'bzzzzzz00110000: begin next_state = 8'b00101111; end
+		//brlo1 -> brlo3 if N=0
+		15'b0zzzzz00101101: begin next_state = 8'b00101111; end
+
+		//brhi1 -> brhi2 if P=1 -> brhi4 -> brhi3
+		15'bz1zzzz00110001: begin next_state = 8'b00110010; end 
+		15'bzzzzzz00110010: begin next_state = 8'b00110100; end
+		15'bzzzzzz00110100: begin next_state = 8'b00110011; end
+		//brhi1 -> brhi3 if P=0
+		15'bz0zzzz00110001: begin next_state = 8'b00110011; end
 		
 		default : begin next_state = 8'b0; end
 		endcase
