@@ -2,24 +2,32 @@ module status_register_encoder(add_out, c_out, status_reg);
 
 input[15:0] add_out;
 input c_out;
-output[3:0] status_reg;
+output [3:0] status_reg;
 
-wire[16:0] status;
+reg p,n,z,c;
+assign status_reg = {n, p, z, c};
 
-assign status = {add_out, c_out); 
 
-always @(status) begin
-	casez(status)
+always @(add_out or c_out) begin
+	if (add_out[15] == 1'b1)
+		n = 1'b1;
+	else
+		n = 1'b0;
+	
+	if (add_out[15] == 1'b0)
+		p = 1'b1;
+	else 
+		p = 1'b0;
+	
+	if (c_out == 1'b1)
+		c = 1'b1;
+	else
+		c = 1'b0;
+	
+	if (add_out == 16'b0)
+		z = 1'b1;
+	else
+		z = 1'b0;
+end
 
-//zero flag
-17'b00000000000000000 : begin status_reg = 4'b0010; end
-17'b00000000000000001 : begin status_reg = 4'b0011; end
-//neg flag
-17'b1zzzzzzzzzzzzzzz0 : begin status_reg = 4'b1000; end
-17'b1zzzzzzzzzzzzzzz1 : begin status_reg = 4'b1001; end
-//pos flag
-17'b0zzzzzzzzzzzzzzz0 : begin status_reg = 4'b0100; end
-17'b0zzzzzzzzzzzzzzz1 : begin status_reg = 4'b0101; end
-
-endcase
 endmodule

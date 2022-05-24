@@ -5,10 +5,11 @@ module alu(clk, rst, a, b, addsub, xor_ctrl, acc_out, acc_enable, a_enable, mul_
 	
 	input[15:0] a,b;
 	output[15:0] acc_out,mul_acc_out;
-	output c_out;
 	
+	output [3:0] status_reg;
 	
 	wire [15:0] add_out, xor_out, acc_in, a_reg, l_m_out, r_m_out;
+	wire c_out;
 	reg [15:0] b_mux;
 	
 	

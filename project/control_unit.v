@@ -4,13 +4,14 @@ module control_unit
 		rout, gin, gout, pcin, 
 		pcout, addsub, a_in, 
 		xorctrl, ctrl_out, 
-		out,ram_addr_sel, ram_out_ctrl, instr_enable, pc_enable, wr_enable, sp_sel
+		out,ram_addr_sel, ram_out_ctrl, instr_enable, pc_enable, wr_enable, sp_sel, sr_sel, current_status
 	);
 	
 	input clk, rst;
+	input [3:0] current_status;
 	input [15:0]instr;
 	output [15:0] rin, rout;
-	output gin, gout, pcin, pcout, addsub, a_in, xorctrl , ctrl_out, ram_addr_sel, ram_out_ctrl, instr_enable, pc_enable, wr_enable, SR_sel;
+	output gin, gout, pcin, pcout, addsub, a_in, xorctrl , ctrl_out, ram_addr_sel, ram_out_ctrl, instr_enable, pc_enable, wr_enable, sr_sel;
 	output reg [15:0] out;
 	output [1:0] sp_sel;
 	wire d_select;
@@ -29,12 +30,12 @@ module control_unit
 	
 	eight_bit_reg state_reg(.D(next_state),.clk(clk),.rst(rst),.Q(curr_state));
 	
-	next_state inst_next_state(.instr(instr),.state(curr_state),.next_state(next_state));
+	next_state inst_next_state(.instr(instr),.state(curr_state),.next_state(next_state), .status_reg(current_status));
 	
 	control_output get_outputs(.state(curr_state),.instr(instr),.rin(rin), .rout(rout), .gin(gin), .gout(gout)
 		, .pcin(pcin), .pcout(pcout), .addsub(addsub),.a_in(a_in), .xorctrl(xorctrl) , .ctrl_out(ctrl_out),
 		.ram_addr_sel(ram_addr_sel), .ram_out_ctrl(ram_out_ctrl), .instr_enable(instr_enable), .pc_enable(pc_enable),
-		.wr_enable(wr_enable), .sp_sel(sp_sel), .d_select(d_select), SR_sel(SR_sel)
+		.wr_enable(wr_enable), .sp_sel(sp_sel), .d_select(d_select), .sr_sel(sr_sel)
 		);
 		
 endmodule
