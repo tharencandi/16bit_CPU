@@ -20,12 +20,16 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	output [6:0] seg0,seg1,seg2,seg3;
 	
 	wire [15:0] rin, rout;
-	wire wr_enable, ram_addr_sel, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl, mul_out_ctrl, mul_acc_out_ctrl;
+	wire wr_enable, ram_addr_sel, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl, mul_out_ctrl, mul_acc_out_ctrl, sr_sel;
 	wire[15:0] instr, bus, instr_address, cu_out, r0_out, r1_out,r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out,r10_out, r11_out, r12_out, r13_out, mul_acc_out, sp_out;
-	wire [15:0] ra_in, acc_out;
-	reg [15:0] ram_address;
+	wire [15:0] ra_in, acc_out, sr_out;
+	reg [15:0] ram_address, sr_in;
 	wire [15:0] ram_out;
 	wire[1:0] sp_sel;
+
+	wire[3:0] status_reg;
+	
+
 	//instruction register takes input from bus and outputs the next instruction which will be input to control unit
 	sixteen_bit_reg instruction_register(.clk(clk),.rst(rst),.D(bus),.Q(instr),.enable(instr_ctrl));
 	
@@ -59,7 +63,7 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 		.pcout(pc_out_ctrl), .addsub(addsub), .a_in(a_enable), 
 		.xorctrl(xor_ctrl), .ctrl_out(cu_out_ctrl), 
 		.out(cu_out),.ram_addr_sel(ram_addr_sel), .ram_out_ctrl(ram_out_ctrl), 
-		.instr_enable(instr_ctrl),.pc_enable(pc_enable), .wr_enable(wr_enable), .sp_sel(sp_sel)
+		.instr_enable(instr_ctrl),.pc_enable(pc_enable), .wr_enable(wr_enable), .sp_sel(sp_sel), .sr_sel(sr_sel), .current_status(sr_out[3:0])
 	);
 	
 	buff ctrl_unit_out_buff(.a(cu_out),.b(bus),.enable(cu_out_ctrl));
@@ -69,7 +73,7 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	alu alu_inst(
 		.clk(clk), .rst(rst), .a(bus),.a_enable(a_enable), 
 		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .acc_out(acc_out), .acc_enable(acc_enable)
-		,.mul_acc_out(mul_acc_out), .mul_out_ctrl(mul_out_ctrl)
+		,.mul_acc_out(mul_acc_out), .mul_out_ctrl(mul_out_ctrl), .status_reg(status_reg)
 		);
 		
 	buff accumulator_buff(.a(acc_out),.b(bus),.enable(acc_out_ctrl));
@@ -119,6 +123,21 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	sixteen_bit_reg r11(.D(bus), .clk(clk), .rst(rst), .Q(r11_out),.enable(rin[11]));
 	sixteen_bit_reg r12(.D(bus), .clk(clk), .rst(rst), .Q(r12_out),.enable(rin[12]));
 	sixteen_bit_reg r13(.D(bus), .clk(clk), .rst(rst), .Q(r13_out),.enable(rin[13]));
+
+
+	//SR
+	//SR mux
+	always@(status_reg or bus or sr_sel) begin
+		if (sr_sel == 1'b0)
+			sr_in = bus;
+		else
+			sr_in = status_reg;
+	end
+	
+	//SR reg14
+	sixteen_bit_reg status_register(.D(sr_in), .clk(clk), .rst(rst), .Q(sr_out),.enable(rin[14]));
+	//SR buff
+	buff sr_out_b(.a(sr_out),.b(bus),.enable(rout[14]));
 	
 
 	

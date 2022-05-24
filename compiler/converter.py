@@ -82,7 +82,7 @@ for line in text:
     if ":" in line:
         sub = line[:-1]
         subroutines[sub] = i
-    elif ["call", "breq", "brlo", "brhi"] in line:
+    elif ("call" in line) or ("breq" in line) or ("brlo" in line) or ("brhi" in line):
         i += 2
         parsed_text.append(line.split())
     else:
@@ -181,7 +181,9 @@ for line in encoded_instrs:
     binary = line[0]
     asm_line_num = line[1] -1
     asm = " ".join(parsed_text[asm_line_num])
-    RAM_OUTPUT += f"{hex(addr)}: {binary}; -- {asm}\n"
+
+    hex_addr = hex(addr).split("x",1)[1].zfill(2)
+    RAM_OUTPUT += f"{hex_addr}: {binary}; -- {asm}\n"
     addr += 1
 RAM_OUTPUT += "END;"
 

@@ -74,31 +74,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE sixteen_bit_reg.v -section_id co
 set_global_assignment -name EDA_TEST_BENCH_FILE program_counter.v -section_id program_counter_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE program_counter_tb.v -section_id program_counter_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE sixteen_bit_reg.v -section_id program_counter_tb
-set_global_assignment -name SOURCE_FILE RAM_Port1.cmp
-set_global_assignment -name VERILOG_FILE RAM_Port1_inst.v
-set_global_assignment -name VERILOG_FILE RAM_Port1_bb.v
-set_global_assignment -name VERILOG_FILE seven_seg_controller_TB.v
-set_global_assignment -name VERILOG_FILE seven_seg_controller.v
-set_global_assignment -name VERILOG_FILE binary_to_7Seg.v
-set_global_assignment -name VERILOG_FILE program_counter_tb.v
-set_global_assignment -name VERILOG_FILE program_counter.v
-set_global_assignment -name VERILOG_FILE xor_TB.v
-set_global_assignment -name VERILOG_FILE sixteen_bit_xor.v
-set_global_assignment -name VERILOG_FILE sixteenBit_FA.v
-set_global_assignment -name VERILOG_FILE register_block.v
-set_global_assignment -name VERILOG_FILE ram.v
-set_global_assignment -name VERILOG_FILE datapath.v
-set_global_assignment -name VERILOG_FILE buff.v
-set_global_assignment -name VERILOG_FILE alu.v
-set_global_assignment -name VERILOG_FILE control_unit.v
-set_global_assignment -name VERILOG_FILE sixteen_bit_reg.v
-set_global_assignment -name VERILOG_FILE next_state.v
-set_global_assignment -name VERILOG_FILE four_bit_reg.v
-set_global_assignment -name VERILOG_FILE control_output.v
-set_global_assignment -name VERILOG_FILE binary_to_reg_sig.v
-set_global_assignment -name VERILOG_FILE control_unit_TB.v
-set_global_assignment -name QIP_FILE RAM_Port1.qip
-set_global_assignment -name VERILOG_FILE datapath_TB.v
 set_global_assignment -name EDA_TEST_BENCH_FILE alu.v -section_id datapath_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE binary_to_7Seg.v -section_id datapath_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE binary_to_reg_sig.v -section_id datapath_TB
@@ -128,7 +103,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE sixteenBit_FA.v -section_id data
 set_global_assignment -name EDA_TEST_BENCH_FILE xor_TB.v -section_id datapath_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE memory_init.mif -section_id datapath_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE ram.v -section_id datapath_TB
-set_global_assignment -name VERILOG_FILE board_instatiate.v
 set_location_assignment PIN_AJ4 -to ADC_CS_N
 set_location_assignment PIN_AK4 -to ADC_DIN
 set_location_assignment PIN_AK3 -to ADC_DOUT
@@ -391,10 +365,37 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE1_SoC -secti
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE1_SoC -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE1_SoC -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE1_SoC -section_id Top
-set_global_assignment -name VERILOG_FILE multiplier.v
-set_global_assignment -name VERILOG_FILE simple_processor.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE status_reg_encoder.v
+set_global_assignment -name SOURCE_FILE RAM_Port1.cmp
+set_global_assignment -name VERILOG_FILE RAM_Port1_inst.v
+set_global_assignment -name VERILOG_FILE RAM_Port1_bb.v
+set_global_assignment -name VERILOG_FILE seven_seg_controller_TB.v
+set_global_assignment -name VERILOG_FILE seven_seg_controller.v
+set_global_assignment -name VERILOG_FILE binary_to_7Seg.v
+set_global_assignment -name VERILOG_FILE program_counter_tb.v
+set_global_assignment -name VERILOG_FILE program_counter.v
+set_global_assignment -name VERILOG_FILE xor_TB.v
+set_global_assignment -name VERILOG_FILE sixteen_bit_xor.v
+set_global_assignment -name VERILOG_FILE sixteenBit_FA.v
+set_global_assignment -name VERILOG_FILE register_block.v
+set_global_assignment -name VERILOG_FILE ram.v
+set_global_assignment -name VERILOG_FILE datapath.v
+set_global_assignment -name VERILOG_FILE buff.v
+set_global_assignment -name VERILOG_FILE alu.v
+set_global_assignment -name VERILOG_FILE control_unit.v
+set_global_assignment -name VERILOG_FILE sixteen_bit_reg.v
+set_global_assignment -name VERILOG_FILE next_state.v
+set_global_assignment -name VERILOG_FILE four_bit_reg.v
+set_global_assignment -name VERILOG_FILE control_output.v
+set_global_assignment -name VERILOG_FILE binary_to_reg_sig.v
+set_global_assignment -name VERILOG_FILE control_unit_TB.v
+set_global_assignment -name QIP_FILE RAM_Port1.qip
+set_global_assignment -name VERILOG_FILE datapath_TB.v
+set_global_assignment -name VERILOG_FILE board_instatiate.v
+set_global_assignment -name VERILOG_FILE multiplier.v
+set_global_assignment -name VERILOG_FILE simple_processor.v
 set_global_assignment -name VERILOG_FILE stack_pointer.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
