@@ -3,6 +3,14 @@ module multiplier(a, b, l_m, r_m);
 input [15:0] a, b; 
 output [15:0] l_m, r_m;
 
+
+wire [31:0] m;
+
+assign m = a*b;
+assign l_m = m[15:0];
+assign r_m = m[31:16];
+
+/*
 wire [15:0] m0;
 wire [16:0] m1;
 wire [17:0] m2;
@@ -57,7 +65,7 @@ assign s15 = s14 + (m15<<15);
 
 assign l_m = s15[15:0];
 assign r_m = s15[31:16];
-
+*/
 endmodule
 
 

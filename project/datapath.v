@@ -63,7 +63,9 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 		.pcout(pc_out_ctrl), .addsub(addsub), .a_in(a_enable), 
 		.xorctrl(xor_ctrl), .ctrl_out(cu_out_ctrl), 
 		.out(cu_out),.ram_addr_sel(ram_addr_sel), .ram_out_ctrl(ram_out_ctrl), 
-		.instr_enable(instr_ctrl),.pc_enable(pc_enable), .wr_enable(wr_enable), .sp_sel(sp_sel), .sr_sel(sr_sel), .current_status(sr_out[3:0])
+		.instr_enable(instr_ctrl),.pc_enable(pc_enable), .wr_enable(wr_enable), .sp_sel(sp_sel), .sr_sel(sr_sel), .current_status(sr_out[3:0]),
+		.mul_out_ctrl(mul_out_ctrl), .mul_acc_out_ctrl(mul_acc_out_ctrl),
+		.add_ctrl(add_ctrl)	
 	);
 	
 	buff ctrl_unit_out_buff(.a(cu_out),.b(bus),.enable(cu_out_ctrl));
@@ -73,13 +75,14 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	alu alu_inst(
 		.clk(clk), .rst(rst), .a(bus),.a_enable(a_enable), 
 		.b(bus), .addsub(addsub), .xor_ctrl(xor_ctrl), .acc_out(acc_out), .acc_enable(acc_enable)
-		,.mul_acc_out(mul_acc_out), .mul_out_ctrl(mul_out_ctrl), .status_reg(status_reg)
+		,.mul_acc_out(mul_acc_out), .mul_out_ctrl(mul_out_ctrl), .status_reg(status_reg), .add_ctrl(add_ctrl)
 		);
-		
+	
 	buff accumulator_buff(.a(acc_out),.b(bus),.enable(acc_out_ctrl));
 	buff mul_accumulator_buff(.a(mul_acc_out),.b(bus),.enable(mul_acc_out_ctrl));
 	
 	/*
+	
 	genvar i;
 	generate 
 		for (i = 0; i < 8; i += 1) begin

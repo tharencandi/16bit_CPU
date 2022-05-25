@@ -29,7 +29,7 @@ module next_state(instr, state, next_state, status_reg);
 		15'bzzz110100000001: begin next_state = 8'b00101001; end //start BREQ
 		15'bzzz111000000001: begin next_state = 8'b00101110; end //start BRLO
 		15'bzzz111100000001: begin next_state = 8'b00101111; end //start BRHI
-
+		15'bzzz011100000001: begin next_state = 8'b00101000; end //start MUL
 		
 		// ones that just go back to s0 (load,mov,add2,sub2,xor2, ldpc, branch) --> is this supposed to be s0??
 		15'bzzzzzzz00000010: begin next_state = 8'b0000; end //load
@@ -99,11 +99,9 @@ module next_state(instr, state, next_state, status_reg);
 		15'bz0zzzzz00101111: begin next_state = 8'b00101011; end
 		
 		//mul0 -> mul1 
-		15'bzzz011100101000 : begin next_state = 8'b10000; end
-		
+		15'bzzzzzzz00101000 : begin next_state = 8'b10000; end
 		//mul1 -> mul2
 		15'bzzzzzzz00010000 : begin next_state = 8'b10001; end
-		
 		//mul2 -> mul3
 		15'bzzzzzzz00010001 : begin next_state = 8'b10010; end
 

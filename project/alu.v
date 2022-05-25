@@ -1,7 +1,7 @@
-module alu(clk, rst, a, b, addsub, xor_ctrl, acc_out, acc_enable, a_enable, mul_acc_out, mul_out_ctrl, status_reg);
+module alu(clk, rst, a, b, addsub, xor_ctrl, acc_out, acc_enable, a_enable, mul_acc_out, mul_out_ctrl, status_reg, add_ctrl);
 	
 	
-	input clk, rst, addsub, xor_ctrl, acc_enable, a_enable, mul_out_ctrl;
+	input clk, rst, addsub, xor_ctrl, acc_enable, a_enable, mul_out_ctrl, add_ctrl;
 	
 	input[15:0] a,b;
 	output[15:0] acc_out,mul_acc_out;
@@ -31,7 +31,7 @@ module alu(clk, rst, a, b, addsub, xor_ctrl, acc_out, acc_enable, a_enable, mul_
 	
 	
 	
-	buff add_buffer(.a(add_out),.b(acc_in),.enable(~xor_ctrl));
+	buff add_buffer(.a(add_out),.b(acc_in),.enable(add_ctrl));
 	buff xor_buffer(.a(xor_out),.b(acc_in),.enable(xor_ctrl));
 	buff mul_buffer(.a(l_m_out), .b(acc_in), .enable(mul_out_ctrl));
 
