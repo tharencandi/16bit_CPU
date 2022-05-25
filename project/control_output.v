@@ -120,6 +120,14 @@ module control_output(state, instr, rin, rout, gin, gout, pcin, pcout, addsub, a
 		//s5 PC to new instr
 		8'b101101: begin ctrl_out = 1'b1; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b1; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b1; wr_enable = 1'b0; sp_sel = 2'b00; sp_enable = 1'b0; d_select = 1'b1;  SR_enable = 1'b0; sr_sel = 1'b0; end
 		
+		//Mul
+		//Mul0 (a in the a register, which is r9 in register a)
+		8'b00101000: begin 
+		8'b00010000: begin
+		8'b00010001: begin
+		8'b00010010: begin
+		:	
+		
 		default  : begin ctrl_out = 1'b0; rx_in = 1'b0; rx_out = 1'b0; ry_in = 1'b0; ry_out = 1'b0; gin = 1'b0; gout = 1'b0; pcin = 1'b0; pcout = 1'b0; addsub = 1'b0; a_in = 1'b0; xorctrl = 1'b0; ram_addr_sel = 1'b0; ram_out_ctrl = 1'b0; instr_enable = 1'b0; pc_enable = 1'b0; wr_enable = 1'b0; sp_sel = 2'b00; sp_enable = 1'b0; d_select = 1'b0;  SR_enable = 1'b0; sr_sel = 1'b0; end
 		
 	endcase
