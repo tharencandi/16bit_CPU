@@ -11,7 +11,7 @@ wire[3:0] temp;
 assign temp = {state, w};
 
 always @(temp) begin
-	case (state)
+	casez (temp)
 	4'b0000 : begin counter_rst = 1'b1; led_out = 1'b0; end
 	4'b0001 : begin counter_rst = 1'b1; led_out = 1'b0; end
 	4'b0011 : begin counter_rst = 1'b1; led_out = 1'b0; end

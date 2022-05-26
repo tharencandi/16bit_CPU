@@ -1,38 +1,4 @@
-|int_n1s_n0s
-SW[0] => SW[0].IN1
-SW[1] => SW[1].IN1
-SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
-SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-SW[6] => SW[6].IN2
-SW[7] => SW[7].IN2
-SW[8] => SW[8].IN2
-SW[9] => SW[9].IN2
-KEY[0] => KEY[0].IN1
-KEY[1] => ~NO_FANOUT~
-KEY[2] => ~NO_FANOUT~
-KEY[3] => KEY[3].IN1
-HEX0[0] <= binary_to_7Seg:display.sevenSeg
-HEX0[1] <= binary_to_7Seg:display.sevenSeg
-HEX0[2] <= binary_to_7Seg:display.sevenSeg
-HEX0[3] <= binary_to_7Seg:display.sevenSeg
-HEX0[4] <= binary_to_7Seg:display.sevenSeg
-HEX0[5] <= binary_to_7Seg:display.sevenSeg
-HEX0[6] <= binary_to_7Seg:display.sevenSeg
-LED[0] <= n1s_n0s:thing.led_out
-LED[1] <= n1s_n0s:thing.led_out
-LED[2] <= n1s_n0s:thing.led_out
-LED[3] <= n1s_n0s:thing.led_out
-LED[4] <= n1s_n0s:thing.led_out
-LED[5] <= n1s_n0s:thing.led_out
-LED[6] <= n1s_n0s:thing.led_out
-LED[7] <= n1s_n0s:thing.led_out
-LED[8] <= n1s_n0s:thing.led_out
-LED[9] <= n1s_n0s:thing.led_out
-
-
-|int_n1s_n0s|n1s_n0s:thing
+|n1s_n0s
 rst => rst.IN2
 n[0] => n[0].IN1
 n[1] => n[1].IN1
@@ -44,7 +10,7 @@ clk => clk.IN2
 led_out <= output_sig_P2:get_out.led_out
 
 
-|int_n1s_n0s|n1s_n0s:thing|state_reg:four_bit_reg
+|n1s_n0s|state_reg:four_bit_reg
 D[0] => Q[0]~reg0.DATAIN
 D[1] => Q[1]~reg0.DATAIN
 D[2] => Q[2]~reg0.DATAIN
@@ -63,7 +29,7 @@ Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|int_n1s_n0s|n1s_n0s:thing|counter_module:counter_thing
+|n1s_n0s|counter_module:counter_thing
 n[0] => Equal0.IN3
 n[1] => Equal0.IN2
 n[2] => Equal0.IN1
@@ -75,7 +41,7 @@ c <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 save => ~NO_FANOUT~
 
 
-|int_n1s_n0s|n1s_n0s:thing|counter_module:counter_thing|fourbit_counter:counter
+|n1s_n0s|counter_module:counter_thing|fourbit_counter:counter
 Enable => Q[0]~reg0.ENA
 Enable => Q[3]~reg0.ENA
 Enable => Q[2]~reg0.ENA
@@ -94,27 +60,27 @@ Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|int_n1s_n0s|n1s_n0s:thing|output_sig_P2:get_out
+|n1s_n0s|output_sig_P2:get_out
 state[0] => Decoder0.IN2
 state[1] => Decoder0.IN1
 state[2] => Decoder0.IN0
-w => ~NO_FANOUT~
-led_out <= <GND>
-counter_rst <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+w => Decoder0.IN3
+led_out <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+counter_rst <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|int_n1s_n0s|n1s_n0s:thing|next_state_P2:get_state
+|n1s_n0s|next_state_P2:get_state
 w => Decoder0.IN3
 state[0] => Decoder0.IN2
 state[1] => Decoder0.IN1
 state[2] => Decoder0.IN0
-next_state[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-next_state[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-next_state[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+next_state[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+next_state[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+next_state[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 c => Decoder0.IN4
 
 
-|int_n1s_n0s|n1s_n0s:thing|threebit_state_reg_P2:state_reg
+|n1s_n0s|threebit_state_reg_P2:state_reg
 D[0] => Q[0]~reg0.DATAIN
 D[1] => Q[1]~reg0.DATAIN
 D[2] => Q[2]~reg0.DATAIN
@@ -127,19 +93,5 @@ rst => Q[2]~reg0.ACLR
 Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|int_n1s_n0s|binary_to_7Seg:display
-binary[0] => Decoder0.IN3
-binary[1] => Decoder0.IN2
-binary[2] => Decoder0.IN1
-binary[3] => Decoder0.IN0
-sevenSeg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-sevenSeg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-sevenSeg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-sevenSeg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-sevenSeg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-sevenSeg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-sevenSeg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

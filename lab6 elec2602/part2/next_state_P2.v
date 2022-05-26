@@ -8,7 +8,7 @@ output reg [2:0] next_state;
 assign temp = {state, w, c};
 
 always @(temp) begin 
-	case (temp)
+	casez (temp)
 	// s0 = start state
 	// s1 = counting zeros
 	//s2 = n zeros counted

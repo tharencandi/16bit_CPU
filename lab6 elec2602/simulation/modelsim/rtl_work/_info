@@ -1,181 +1,279 @@
 m255
 K4
 z2
-!s11f vlog 2020.1 2020.02, Feb 28 2020
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dE:/lab6 elec2602/simulation/modelsim
-vbinary_to_7Seg
-Z1 !s110 1651719984
+Z0 dC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/simulation/modelsim
+T_opt
+!s110 1653523964
+VNT8K_i7S4aigR_W]YG^FK1
+04 10 4 work lab6_p1_TB fast 0
+=1-1c697acb668f-628ec5fb-10-4e14
+!s124 OEM10U5 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vcounter_module
+Z2 !s110 1653523960
 !i10b 1
-!s100 D]Y9m5RmU[RmTJJJBE^Ed1
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IoCMC1L2PkRSh0C`hOG0]e3
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s100 HK8C_g<N7fT0;n3^eUONA1
+I3l7YlV>7EDV^QD7n=03ag0
 R0
-w1648090982
-8E:/lab5 elec2602/p1/binary_to_7Seg.v
-FE:/lab5 elec2602/p1/binary_to_7Seg.v
-!i122 0
-L0 1 28
-Z4 OV;L;2020.1;71
+Z3 w1653472887
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/counter_module.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/counter_module.v
+!i122 6
+L0 1 16
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z5 !s108 1651719984.000000
-!s107 E:/lab5 elec2602/p1/binary_to_7Seg.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab5 elec2602/p1|E:/lab5 elec2602/p1/binary_to_7Seg.v|
-!i113 1
-Z6 o-vlog01compat -work work
-!s92 -vlog01compat -work work {+incdir+E:/lab5 elec2602/p1}
-Z7 tCvgOpt 0
-nbinary_to_7@seg
+Z6 !s108 1653523960.000000
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/counter_module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/counter_module.v|
+!i113 0
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -vlog01compat -work work {+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
 vfour1s_four0s
-Z8 !s110 1651719986
+R2
 !i10b 1
 !s100 9d<kB0TdaAYXB^k`MAB[W3
-R2
-I3M7i3<EmP_TYQ3mHCk6X@2
-R3
+IBCT?aD3Vl^=MMEl:FlBkE1
 R0
-w1651719052
-8E:/lab6 elec2602/part1/four1s_four0s.v
-FE:/lab6 elec2602/part1/four1s_four0s.v
-!i122 6
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/four1s_four0s.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/four1s_four0s.v
+!i122 7
 L0 1 14
 R4
+R5
 r1
 !s85 0
 31
-Z9 !s108 1651719985.000000
-!s107 E:/lab6 elec2602/part1/four1s_four0s.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab6 elec2602/part1|E:/lab6 elec2602/part1/four1s_four0s.v|
-!i113 1
 R6
-Z10 !s92 -vlog01compat -work work {+incdir+E:/lab6 elec2602/part1}
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/four1s_four0s.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/four1s_four0s.v|
+!i113 0
 R7
-vinst_seq_detect
-!s110 1651719985
+Z9 !s92 -vlog01compat -work work {+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vfourbit_counter
+Z10 !s110 1653523959
 !i10b 1
-!s100 hA02N`Rf87d::0zVBC:<?2
-R2
-IQIz;ibnZ;j6LZ]Qc`^MU12
-R3
+!s100 8>LLGKPbFXJg?@eBTc?2n1
+I6JZ4QY7NzRW236DP5DmKh1
 R0
-w1651122018
-8E:/lab6 elec2602/part1/inst_seq_detect.v
-FE:/lab6 elec2602/part1/inst_seq_detect.v
-!i122 5
-L0 1 23
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/fourbit_counter.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/fourbit_counter.v
+!i122 0
+L0 1 17
 R4
+R5
 r1
 !s85 0
 31
-R9
-!s107 E:/lab6 elec2602/part1/inst_seq_detect.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab6 elec2602/part1|E:/lab6 elec2602/part1/inst_seq_detect.v|
-!i113 1
-R6
-R10
+!s108 1653523958.000000
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/fourbit_counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/fourbit_counter.v|
+!i113 0
 R7
-vlab6_p1_TB
 R8
+R1
+vlab6_p1_TB
+Z11 !s110 1653523961
 !i10b 1
 !s100 LmKEz74cM[87@ZKe0`U>P1
-R2
-Ib=XU=VMPE=IVTT>L;z3491
-R3
+IR6;<ea]TCF@L`POn6fzUF2
 R0
-w1651719972
-8E:/lab6 elec2602/part1/lab6_p1_TB.v
-FE:/lab6 elec2602/part1/lab6_p1_TB.v
-!i122 7
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/lab6_p1_TB.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/lab6_p1_TB.v
+!i122 8
 L0 1 46
 R4
+R5
 r1
 !s85 0
 31
-Z11 !s108 1651719986.000000
-!s107 E:/lab6 elec2602/part1/lab6_p1_TB.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab6 elec2602/part1|E:/lab6 elec2602/part1/lab6_p1_TB.v|
-!i113 1
 R6
-R10
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/lab6_p1_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/lab6_p1_TB.v|
+!i113 0
 R7
+R9
+R1
 nlab6_p1_@t@b
-vnext_state
+vn1s_n0s
+R2
+!i10b 1
+!s100 Ikn_[i2o9aOASR==aUZn90
+I?8@NW^IEFiRfQ1h5E8OcY0
+R0
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v
+!i122 5
+L0 1 22
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v|
+!i113 0
+R7
 R8
+R1
+vnext_state
+R11
 !i10b 1
 !s100 d03]JM@EJO=_T5hWC[ORc3
-R2
-I:1]YWOc>6J:HAokmb9=fb1
-R3
+IDiPmWD01=5fXXgIQoTYzo2
 R0
-w1651718192
-8E:/lab6 elec2602/part1/next_state.v
-FE:/lab6 elec2602/part1/next_state.v
-!i122 8
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/next_state.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/next_state.v
+!i122 9
 L0 1 37
 R4
+R5
 r1
 !s85 0
 31
-R11
-!s107 E:/lab6 elec2602/part1/next_state.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab6 elec2602/part1|E:/lab6 elec2602/part1/next_state.v|
-!i113 1
-R6
-R10
+Z12 !s108 1653523961.000000
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/next_state.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/next_state.v|
+!i113 0
 R7
+R9
+R1
+vnext_state_P2
+R10
+!i10b 1
+!s100 zjEGHGL90UaGTgFM8PdhD3
+IIK>m[gnWQBlAQzK>V7^<M2
+R0
+w1653523343
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/next_state_P2.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/next_state_P2.v
+!i122 2
+L0 1 38
+R4
+R5
+r1
+!s85 0
+31
+Z13 !s108 1653523959.000000
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/next_state_P2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/next_state_P2.v|
+!i113 0
+R7
+R8
+R1
+nnext_state_@p2
 voutput_sig
-!s110 1651719987
+R11
 !i10b 1
 !s100 5XX0z[6jcBh:Yl8A4nAZ83
-R2
-I8DliT9DXNUcRl<HYVP?ah2
-R3
+I;TkJFCG81nR97Zc`@5RdR0
 R0
-w1651119688
-8E:/lab6 elec2602/part1/output_sig.v
-FE:/lab6 elec2602/part1/output_sig.v
-!i122 9
-Z12 L0 1 15
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/output_sig.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/output_sig.v
+!i122 10
+Z14 L0 1 15
 R4
+R5
 r1
 !s85 0
 31
-R11
-!s107 E:/lab6 elec2602/part1/output_sig.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab6 elec2602/part1|E:/lab6 elec2602/part1/output_sig.v|
-!i113 1
-R6
-R10
+R12
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/output_sig.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/output_sig.v|
+!i113 0
 R7
-vstate_reg
+R9
 R1
+voutput_sig_P2
+R2
+!i10b 1
+!s100 Bi;W<0>9FOJV2PIC<Z0KP1
+ID4ZgBcQ:Q8_D`_IiXeE]h3
+R0
+w1653523359
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/output_sig_P2.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/output_sig_P2.v
+!i122 4
+L0 1 27
+R4
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/output_sig_P2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/output_sig_P2.v|
+!i113 0
+R7
+R8
+R1
+noutput_sig_@p2
+vstate_reg
+R10
 !i10b 1
 !s100 SdXN<TeMUGjnl7_2l720M3
-R2
-I>R0[[0@o9RTc3Tn4f5IND1
-R3
+IQkLZEi:9b6mn?L8c:HLW53
 R0
-w1651719468
-8E:/lab6 elec2602/part1/state_reg.v
-FE:/lab6 elec2602/part1/state_reg.v
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/state_reg.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/state_reg.v
 !i122 1
-R12
+R14
 R4
+R5
 r1
 !s85 0
 31
-R5
-!s107 E:/lab6 elec2602/part1/state_reg.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lab6 elec2602/part1|E:/lab6 elec2602/part1/state_reg.v|
-!i113 1
-R6
-R10
+R13
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/state_reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/state_reg.v|
+!i113 0
 R7
+R9
+R1
+vthreebit_state_reg_P2
+R10
+!i10b 1
+!s100 K4dCAUD0_FLk0IZ88[YU<3
+IW2khIe8=EP9DNPZ9@C^6_2
+R0
+R3
+8C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/state_reg_P2.v
+FC:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/state_reg_P2.v
+!i122 3
+R14
+R4
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/state_reg_P2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2|C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/state_reg_P2.v|
+!i113 0
+R7
+R8
+R1
+nthreebit_state_reg_@p2

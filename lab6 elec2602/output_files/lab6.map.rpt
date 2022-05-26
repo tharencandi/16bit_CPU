@@ -1,31 +1,25 @@
-Analysis & Synthesis report for lab6
-Thu May 05 15:06:37 2022
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Analysis & Elaboration report for lab6
+Thu May 26 10:12:28 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "n1s_n0s:thing|counter_module:counter_thing"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "counter_module:counter_thing"
+  6. Analysis & Elaboration Messages
+  7. Analysis & Elaboration Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2021  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -42,36 +36,47 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu May 05 15:06:37 2022       ;
-; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                   ; lab6                                        ;
-; Top-level Entity Name           ; int_n1s_n0s                                 ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 31                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Thu May 26 10:12:28 2022       ;
+; Quartus Prime Version         ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                 ; lab6                                        ;
+; Top-level Entity Name         ; n1s_n0s                                     ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; int_n1s_n0s        ; lab6               ;
+; Top-level entity name                                                           ; n1s_n0s            ; lab6               ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -152,94 +157,8 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                               ;
-+--------------------------------------+-----------------+------------------------+------------------------------------------+---------+
-; File Name with User-Entered Path     ; Used in Netlist ; File Type              ; File Name with Absolute Path             ; Library ;
-+--------------------------------------+-----------------+------------------------+------------------------------------------+---------+
-; part2/fourbit_counter.v              ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/part2/fourbit_counter.v ;         ;
-; ../lab5 elec2602/p1/binary_to_7Seg.v ; yes             ; User Verilog HDL File  ; E:/lab5 elec2602/p1/binary_to_7Seg.v     ;         ;
-; part1/state_reg.v                    ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/part1/state_reg.v       ;         ;
-; part2/next_state_P2.v                ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/part2/next_state_P2.v   ;         ;
-; part2/state_reg_P2.v                 ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/part2/state_reg_P2.v    ;         ;
-; part2/output_sig_P2.v                ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/part2/output_sig_P2.v   ;         ;
-; part2/n1s_n0s.v                      ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/part2/n1s_n0s.v         ;         ;
-; part2/counter_module.v               ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/part2/counter_module.v  ;         ;
-; int_n1s_n0s.v                        ; yes             ; User Verilog HDL File  ; E:/lab6 elec2602/int_n1s_n0s.v           ;         ;
-+--------------------------------------+-----------------+------------------------+------------------------------------------+---------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 4           ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 7           ;
-;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 0           ;
-;     -- 5 input functions                    ; 0           ;
-;     -- 4 input functions                    ; 7           ;
-;     -- <=3 input functions                  ; 0           ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 31          ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; SW[6]~input ;
-; Maximum fan-out                             ; 7           ;
-; Total fan-out                               ; 66          ;
-; Average fan-out                             ; 0.96        ;
-+---------------------------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name    ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+----------------+--------------+
-; |int_n1s_n0s                ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 31   ; 0            ; |int_n1s_n0s                        ; int_n1s_n0s    ; work         ;
-;    |binary_to_7Seg:display| ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |int_n1s_n0s|binary_to_7Seg:display ; binary_to_7Seg ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "n1s_n0s:thing|counter_module:counter_thing"                                                                                                 ;
+; Port Connectivity Checks: "counter_module:counter_thing"                                                                                                               ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                                                                                      ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -247,104 +166,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 9                           ;
-;     normal            ; 9                           ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         4 data inputs ; 7                           ;
-; boundary_port         ; 31                          ;
-;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.38                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu May 05 15:06:27 2022
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6 -c lab6
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Thu May 26 10:12:21 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab6 -c lab6 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file part2/fourbit_counter.v
-    Info (12023): Found entity 1: fourbit_counter File: E:/lab6 elec2602/part2/fourbit_counter.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /lab5 elec2602/p1/binary_to_7seg.v
-    Info (12023): Found entity 1: binary_to_7Seg File: E:/lab5 elec2602/p1/binary_to_7Seg.v Line: 1
+    Info (12023): Found entity 1: fourbit_counter File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/fourbit_counter.v Line: 1
+Warning (12019): Can't analyze file -- file ../lab5 elec2602/p1/binary_to_7Seg.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file part1/state_reg.v
-    Info (12023): Found entity 1: state_reg File: E:/lab6 elec2602/part1/state_reg.v Line: 1
+    Info (12023): Found entity 1: state_reg File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/state_reg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part1/output_sig.v
-    Info (12023): Found entity 1: output_sig File: E:/lab6 elec2602/part1/output_sig.v Line: 1
+    Info (12023): Found entity 1: output_sig File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/output_sig.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part1/next_state.v
-    Info (12023): Found entity 1: next_state File: E:/lab6 elec2602/part1/next_state.v Line: 1
+    Info (12023): Found entity 1: next_state File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/next_state.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part1/lab6_p1_tb.v
-    Info (12023): Found entity 1: lab6_p1_TB File: E:/lab6 elec2602/part1/lab6_p1_TB.v Line: 1
+    Info (12023): Found entity 1: lab6_p1_TB File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/lab6_p1_TB.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part1/four1s_four0s.v
-    Info (12023): Found entity 1: four1s_four0s File: E:/lab6 elec2602/part1/four1s_four0s.v Line: 1
+    Info (12023): Found entity 1: four1s_four0s File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/four1s_four0s.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part1/inst_seq_detect.v
-    Info (12023): Found entity 1: inst_seq_detect File: E:/lab6 elec2602/part1/inst_seq_detect.v Line: 1
+    Info (12023): Found entity 1: inst_seq_detect File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part1/inst_seq_detect.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part2/next_state_p2.v
-    Info (12023): Found entity 1: next_state_P2 File: E:/lab6 elec2602/part2/next_state_P2.v Line: 1
+    Info (12023): Found entity 1: next_state_P2 File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/next_state_P2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part2/state_reg_p2.v
-    Info (12023): Found entity 1: threebit_state_reg_P2 File: E:/lab6 elec2602/part2/state_reg_P2.v Line: 1
+    Info (12023): Found entity 1: threebit_state_reg_P2 File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/state_reg_P2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part2/output_sig_p2.v
-    Info (12023): Found entity 1: output_sig_P2 File: E:/lab6 elec2602/part2/output_sig_P2.v Line: 1
+    Info (12023): Found entity 1: output_sig_P2 File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/output_sig_P2.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part2/n1s_n0s.v
-    Info (12023): Found entity 1: n1s_n0s File: E:/lab6 elec2602/part2/n1s_n0s.v Line: 1
+    Info (12023): Found entity 1: n1s_n0s File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file part2/counter_module.v
-    Info (12023): Found entity 1: counter_module File: E:/lab6 elec2602/part2/counter_module.v Line: 1
+    Info (12023): Found entity 1: counter_module File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/counter_module.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file int_n1s_n0s.v
-    Info (12023): Found entity 1: int_n1s_n0s File: E:/lab6 elec2602/int_n1s_n0s.v Line: 1
-Info (12127): Elaborating entity "int_n1s_n0s" for the top level hierarchy
-Info (12128): Elaborating entity "n1s_n0s" for hierarchy "n1s_n0s:thing" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 9
-Info (12128): Elaborating entity "state_reg" for hierarchy "n1s_n0s:thing|state_reg:four_bit_reg" File: E:/lab6 elec2602/part2/n1s_n0s.v Line: 11
-Info (12128): Elaborating entity "counter_module" for hierarchy "n1s_n0s:thing|counter_module:counter_thing" File: E:/lab6 elec2602/part2/n1s_n0s.v Line: 14
-Info (12128): Elaborating entity "fourbit_counter" for hierarchy "n1s_n0s:thing|counter_module:counter_thing|fourbit_counter:counter" File: E:/lab6 elec2602/part2/counter_module.v Line: 8
-Warning (10230): Verilog HDL assignment warning at fourbit_counter.v(11): truncated value with size 32 to match size of target (4) File: E:/lab6 elec2602/part2/fourbit_counter.v Line: 11
-Info (12128): Elaborating entity "output_sig_P2" for hierarchy "n1s_n0s:thing|output_sig_P2:get_out" File: E:/lab6 elec2602/part2/n1s_n0s.v Line: 16
-Warning (10235): Verilog HDL Always Construct warning at output_sig_P2.v(14): variable "state" is read inside the Always Construct but isn't in the Always Construct's Event Control File: E:/lab6 elec2602/part2/output_sig_P2.v Line: 14
-Warning (10059): Verilog HDL Case Statement warning at output_sig_P2.v(19): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/output_sig_P2.v Line: 19
-Warning (10199): Verilog HDL Case Statement warning at output_sig_P2.v(20): case item expression never matches the case expression File: E:/lab6 elec2602/part2/output_sig_P2.v Line: 20
-Info (12128): Elaborating entity "next_state_P2" for hierarchy "n1s_n0s:thing|next_state_P2:get_state" File: E:/lab6 elec2602/part2/n1s_n0s.v Line: 18
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(18): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 18
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(19): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 19
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(23): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 23
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(25): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 25
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(26): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 26
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(30): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 30
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(32): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 32
-Warning (10059): Verilog HDL Case Statement warning at next_state_P2.v(33): case item expression never matches the case expression because it contains an 'x' or 'z' value File: E:/lab6 elec2602/part2/next_state_P2.v Line: 33
-Info (12128): Elaborating entity "threebit_state_reg_P2" for hierarchy "n1s_n0s:thing|threebit_state_reg_P2:state_reg" File: E:/lab6 elec2602/part2/n1s_n0s.v Line: 20
-Info (12128): Elaborating entity "binary_to_7Seg" for hierarchy "binary_to_7Seg:display" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 12
+    Info (12023): Found entity 1: int_n1s_n0s File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/int_n1s_n0s.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file n1s_n0s_tb.v
+    Info (12023): Found entity 1: n1s_n0s_TB File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/n1s_n0s_TB.v Line: 1
+Info (12127): Elaborating entity "n1s_n0s" for the top level hierarchy
+Info (12128): Elaborating entity "state_reg" for hierarchy "state_reg:four_bit_reg" File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v Line: 11
+Info (12128): Elaborating entity "counter_module" for hierarchy "counter_module:counter_thing" File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v Line: 14
+Info (12128): Elaborating entity "fourbit_counter" for hierarchy "counter_module:counter_thing|fourbit_counter:counter" File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/counter_module.v Line: 8
+Warning (10230): Verilog HDL assignment warning at fourbit_counter.v(11): truncated value with size 32 to match size of target (4) File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/fourbit_counter.v Line: 11
+Info (12128): Elaborating entity "output_sig_P2" for hierarchy "output_sig_P2:get_out" File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v Line: 16
+Info (12128): Elaborating entity "next_state_P2" for hierarchy "next_state_P2:get_state" File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v Line: 18
+Info (12128): Elaborating entity "threebit_state_reg_P2" for hierarchy "threebit_state_reg_P2:state_reg" File: C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/part2/n1s_n0s.v Line: 20
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LED[0]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[1]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[2]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[3]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[4]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[5]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[6]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[7]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[8]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-    Warning (13410): Pin "LED[9]" is stuck at GND File: E:/lab6 elec2602/int_n1s_n0s.v Line: 5
-Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE1_SoC -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE1_SoC -section_id Top was ignored
@@ -370,34 +239,17 @@ Warning (20013): Ignored 24 assignments for entity "DE1_SoC" -- entity does not 
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE1_SoC -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE1_SoC -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE1_SoC -section_id Top was ignored
-Info (144001): Generated suppressed messages file E:/lab6 elec2602/output_files/lab6.map.smsg
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[1]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[2]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[3]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[4]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[5]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 3
-    Warning (15610): No output dependent on input pin "KEY[0]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 4
-    Warning (15610): No output dependent on input pin "KEY[1]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 4
-    Warning (15610): No output dependent on input pin "KEY[2]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 4
-    Warning (15610): No output dependent on input pin "KEY[3]" File: E:/lab6 elec2602/int_n1s_n0s.v Line: 4
-Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
-    Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Thu May 05 15:06:37 2022
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:16
+Info (144001): Generated suppressed messages file C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/output_files/lab6.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Thu May 26 10:12:28 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:18
 
 
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in E:/lab6 elec2602/output_files/lab6.map.smsg.
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/remon/Desktop/ELEC2602/lab6 elec2602/output_files/lab6.map.smsg.
 
 
