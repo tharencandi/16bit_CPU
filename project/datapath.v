@@ -16,11 +16,11 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	
 	input clk, rst;
 	
-	input [2:0] sw;
+	input [3:0] sw;
 	output [6:0] seg0,seg1,seg2,seg3;
 	
 	wire [15:0] rin, rout;
-	wire wr_enable, ram_addr_sel, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl, mul_out_ctrl, mul_acc_out_ctrl, sr_sel;
+	wire wr_enable, ram_addr_sel, pcin, ram_out_ctrl, instr_ctrl, acc_enable, acc_out_ctrl, pc_enable, pc_out_ctrl, addsub, a_enable, xor_ctrl, cu_out_ctrl, mul_out_ctrl, mul_acc_out_ctrl, sr_sel, add_ctrl;
 	wire[15:0] instr, bus, instr_address, cu_out, r0_out, r1_out,r2_out, r3_out, r4_out, r5_out, r6_out, r7_out, r8_out, r9_out,r10_out, r11_out, r12_out, r13_out, mul_acc_out, sp_out;
 	wire [15:0] ra_in, acc_out, sr_out;
 	reg [15:0] ram_address, sr_in;
@@ -100,9 +100,19 @@ module datapath(clk, rst, sw, seg0, seg1,seg2,seg3);
 	//display driver
 	seven_seg_controller display_driver
 	(
-		.sw(sw), .r1(r1_out), .r2(r2_out), .r3(r3_out), 
-		.r4(r4_out), .r5(r5_out), .r6(r6_out), .r7(r7_out),
-		.r8(r8_out), .displ(displays)
+		.sw(sw), .r0(r0_out), .r1(r1_out), .r2(r2_out), 
+		.r3(r3_out), .r4(r4_out), .r5(r5_out), .r6(r6_out),
+		.r7(r7_out), 
+		.r8(r8_out),
+		.r9(r9_out),
+		.r10(r10_out),
+		.r11(r11_out),
+		.r12(r12_out),
+		.r13(r13_out),
+		.r14(sr_out),
+		.r15(sp_out),
+		
+		.displ(displays)
 	);
 	
 	// reg and tri-state-buffers

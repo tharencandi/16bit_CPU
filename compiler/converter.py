@@ -77,18 +77,20 @@ subroutines = {}
 parsed_text = []
 for line in text:
     line = line.strip().lower()
+    line = line.split("//", 1)[0]
     if len(line) == 0:
         continue
     if ":" in line:
-        sub = line[:-1]
+        sub = line.split(":",1)[0]
+        #sub = line[:-1]
         subroutines[sub] = i
     elif ("call" in line) or ("breq" in line) or ("brlo" in line) or ("brhi" in line):
         i += 2
         parsed_text.append(line.split())
     else:
         i += 1
-        parsed_text.append(line.split())    
-
+        parsed_text.append(line.split())  
+        
 def int_to_binstr(i, bin_len):
     bin_number = bin(i)[2:]
     padded_binary = bin_number.zfill(bin_len)
